@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpnioxsw3rl71"]
+
+[ext_resource type="Script" uid="uid://b8uc5gxwya1tg" path="res://bonus.gd" id="1_vn8bm"]
+[ext_resource type="Texture2D" uid="uid://c66onysshhoo" path="res://assets/spr_shell.png" id="2_vn8bm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ah8e"]
+radius = 13.0
+height = 32.0
+
+[node name="Bonus" type="Area2D"]
+script = ExtResource("1_vn8bm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.2499981, -19.25)
+texture = ExtResource("2_vn8bm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.2500229, -20.250008)
+shape = SubResource("CapsuleShape2D_7ah8e")

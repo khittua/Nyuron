@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://nd2avwrk740n"]
+
+[ext_resource type="Script" uid="uid://d2mbwavawovgg" path="res://FloatingText.gd" id="1_fc4js"]
+[ext_resource type="FontFile" uid="uid://c7j1g5evou5l8" path="res://Aquarius-Bold.ttf" id="1_iwtc3"]
+
+[node name="FloatingText" type="Node2D"]
+script = ExtResource("1_fc4js")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 0.7921569, 1)
+theme_override_fonts/font = ExtResource("1_iwtc3")
+text = "+10"
+horizontal_alignment = 1
+vertical_alignment = 1
