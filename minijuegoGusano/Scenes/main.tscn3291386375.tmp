@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcxhw3pgk3l3b"]
+
+[ext_resource type="Script" uid="uid://cyyq3ybln6m6" path="res://scripts/main.gd" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dnsmh861twjt1" path="res://Scenes/spawner.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://xn7qtgjcfm7u" path="res://Scenes/nyuron.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://c4xj1d7ftanbt" path="res://Scenes/worm.tscn" id="3_jjvhh"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8gbba")
+
+[node name="Playfield" type="Node2D" parent="."]
+
+[node name="Spawner" parent="Playfield" instance=ExtResource("1_bo1nx")]
+worm_scene = ExtResource("3_jjvhh")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(135, 241)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_right = 36.0
+offset_bottom = 23.0
+grow_horizontal = 2
+pivot_offset = Vector2(0, 10)
+theme_override_constants/shadow_offset_y = 1
+text = "Puntos: 0"
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.0
+offset_top = 20.0
+offset_right = 21.0
+offset_bottom = 43.0
+grow_horizontal = 2
+text = "60.0 s"
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="EscapeTimer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[node name="Nyuron" parent="." instance=ExtResource("2_8gbba")]
+
+[node name="Bucket" type="Node2D" parent="."]
+position = Vector2(64, 428)

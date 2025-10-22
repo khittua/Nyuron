@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcxhw3pgk3l3b"]
+
+[ext_resource type="Script" uid="uid://cyyq3ybln6m6" path="res://scripts/main.gd" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dnsmh861twjt1" path="res://Scenes/spawner.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://xn7qtgjcfm7u" path="res://Scenes/nyuron.tscn" id="2_8gbba"]
+[ext_resource type="Texture2D" uid="uid://byxvrxqvsjlu7" path="res://Assets/spr_background (1)1.png" id="2_kry3j"]
+[ext_resource type="PackedScene" uid="uid://c4xj1d7ftanbt" path="res://Scenes/worm.tscn" id="3_jjvhh"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8gbba")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(135, 239)
+texture = ExtResource("2_kry3j")
+
+[node name="Playfield" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="Playfield"]
+position = Vector2(136, 240)
+
+[node name="Spawner" parent="Playfield" instance=ExtResource("1_bo1nx")]
+position = Vector2(0, 0)
+worm_scene = ExtResource("3_jjvhh")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+anchors_preset = -1
+anchor_left = -0.011000001
+anchor_top = -0.47400004
+anchor_right = -0.011000001
+anchor_bottom = -0.47400004
+offset_left = 104.97
+offset_top = 227.52002
+offset_right = 176.97
+offset_bottom = 250.52002
+grow_horizontal = 2
+pivot_offset = Vector2(0, 10)
+theme_override_constants/shadow_offset_y = 1
+text = "Puntos: 0"
+
+[node name="TimerLabel" type="Label" parent="UI"]
+anchors_preset = -1
+anchor_left = -0.007
+anchor_top = -0.432
+anchor_right = -0.007
+anchor_bottom = -0.432
+offset_left = 119.89
+offset_top = 224.36
+offset_right = 163.89
+offset_bottom = 247.36
+grow_horizontal = 2
+text = "60.0 s"
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="EscapeTimer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[node name="Nyuron" parent="." instance=ExtResource("2_8gbba")]
+position = Vector2(134, 430)
+
+[node name="Bucket" type="Node2D" parent="."]
+position = Vector2(110, 439)

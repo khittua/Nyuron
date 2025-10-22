@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnsmh861twjt1"]
+
+[ext_resource type="Script" uid="uid://sc8ikpsvond2" path="res://scripts/spawner.gd" id="1_2bop2"]
+
+[node name="Spawner" type="Node2D"]
+position = Vector2(-1, 2)
+script = ExtResource("1_2bop2")
+bad_ratio = null
+start_interval = null
+min_interval = null
+difficulty_speed = null
+worm_lifetime = null
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.9
+autostart = true
+
+[node name="Spot1" type="Marker2D" parent="."]
+position = Vector2(229, 280)
+
+[node name="Spot2" type="Marker2D" parent="."]
+position = Vector2(121, 176)
+
+[node name="Spot3" type="Marker2D" parent="."]
+position = Vector2(193, 214)
+
+[node name="Spot4" type="Marker2D" parent="."]
+position = Vector2(35, 316)
+
+[node name="Spot5" type="Marker2D" parent="."]
+position = Vector2(41, 193)
+
+[node name="Spot6" type="Marker2D" parent="."]
+position = Vector2(117, 279)
+
+[node name="Spot7" type="Marker2D" parent="."]
+position = Vector2(231, 152)

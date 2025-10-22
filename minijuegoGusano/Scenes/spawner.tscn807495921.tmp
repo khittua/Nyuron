@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=3 uid="uid://dnsmh861twjt1"]
+
+[ext_resource type="Script" uid="uid://sc8ikpsvond2" path="res://scripts/spawner.gd" id="1_2bop2"]
+[ext_resource type="Texture2D" uid="uid://dltxd08xbx1y" path="res://Assets/ollo.png" id="2_mdv8j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n80vc"]
+atlas = ExtResource("2_mdv8j")
+region = Rect2(0, 0, 57, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7lw1"]
+atlas = ExtResource("2_mdv8j")
+region = Rect2(114, 0, 57, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1856"]
+atlas = ExtResource("2_mdv8j")
+region = Rect2(57, 0, 57, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_211br"]
+atlas = ExtResource("2_mdv8j")
+region = Rect2(0, 0, 57, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsk0y"]
+atlas = ExtResource("2_mdv8j")
+region = Rect2(114, 0, 57, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgdv7"]
+atlas = ExtResource("2_mdv8j")
+region = Rect2(57, 0, 57, 62)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xhbpr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n80vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7lw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1856")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_211br")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsk0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgdv7")
+}],
+"loop": false,
+"name": &"open",
+"speed": 7.0
+}]
+
+[node name="Spawner" type="Node2D"]
+position = Vector2(-1, 2)
+script = ExtResource("1_2bop2")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.9
+autostart = true
+
+[node name="Spot1" type="Marker2D" parent="."]
+position = Vector2(229, 280)
+
+[node name="Hole" type="AnimatedSprite2D" parent="Spot1"]
+position = Vector2(4, -6)
+scale = Vector2(1.3377192, 1.1612903)
+sprite_frames = SubResource("SpriteFrames_xhbpr")
+animation = &"open"
+
+[node name="Spot2" type="Marker2D" parent="."]
+position = Vector2(121, 176)
+
+[node name="Hole" type="AnimatedSprite2D" parent="Spot2"]
+position = Vector2(4, -6)
+scale = Vector2(1.3377192, 1.1612903)
+sprite_frames = SubResource("SpriteFrames_xhbpr")
+animation = &"open"
+
+[node name="Spot3" type="Marker2D" parent="."]
+position = Vector2(193, 214)
+
+[node name="Hole" type="AnimatedSprite2D" parent="Spot3"]
+position = Vector2(4, -6)
+scale = Vector2(1.3377192, 1.1612903)
+sprite_frames = SubResource("SpriteFrames_xhbpr")
+animation = &"open"
+
+[node name="Spot4" type="Marker2D" parent="."]
+position = Vector2(35, 316)
+
+[node name="Hole" type="AnimatedSprite2D" parent="Spot4"]
+position = Vector2(4, -6)
+scale = Vector2(1.3377192, 1.1612903)
+sprite_frames = SubResource("SpriteFrames_xhbpr")
+animation = &"open"
+
+[node name="Spot5" type="Marker2D" parent="."]
+position = Vector2(41, 193)
+
+[node name="Hole" type="AnimatedSprite2D" parent="Spot5"]
+position = Vector2(4, -6)
+scale = Vector2(1.3377192, 1.1612903)
+sprite_frames = SubResource("SpriteFrames_xhbpr")
+animation = &"open"
+
+[node name="Spot6" type="Marker2D" parent="."]
+position = Vector2(117, 279)
+
+[node name="Hole" type="AnimatedSprite2D" parent="Spot6"]
+position = Vector2(4, -6)
+scale = Vector2(1.3377192, 1.1612903)
+sprite_frames = SubResource("SpriteFrames_xhbpr")
+animation = &"open"
+
+[node name="Spot7" type="Marker2D" parent="."]
+position = Vector2(231, 152)
+
+[node name="Hole" type="AnimatedSprite2D" parent="Spot7"]
+position = Vector2(4, -6)
+scale = Vector2(1.3377192, 1.1612903)
+sprite_frames = SubResource("SpriteFrames_xhbpr")
+animation = &"open"
