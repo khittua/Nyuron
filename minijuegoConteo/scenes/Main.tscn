@@ -1,0 +1,305 @@
+[gd_scene load_steps=53 format=3 uid="uid://ciekfk8tqt2rq"]
+
+[ext_resource type="Script" uid="uid://br0ie6mf36tvv" path="res://scripts/main.gd" id="1_vcsgt"]
+[ext_resource type="Texture2D" uid="uid://c1eoxwj3cvfu0" path="res://assets/background-sheet.png" id="2_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://n2d06463ygfr" path="res://scenes/NyuronLengua.tscn" id="4_c01mt"]
+[ext_resource type="Script" uid="uid://nkfpcll1tu7v" path="res://scripts/AnimalSpawner.gd" id="4_jlsqs"]
+[ext_resource type="PackedScene" uid="uid://d0dpbnxl06o63" path="res://scenes/NyuronSoda.tscn" id="5_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://elgmtco4bilm" path="res://scenes/AnimalSpawner.tscn" id="5_q8u5g"]
+[ext_resource type="PackedScene" uid="uid://dv7q5vtw7lt8p" path="res://scenes/Tortuguita.tscn" id="6_lhr70"]
+[ext_resource type="PackedScene" uid="uid://ycqerc6ybbyk" path="res://scenes/TortuguitaEstrella.tscn" id="6_nxtc6"]
+[ext_resource type="FontFile" uid="uid://cvpke7jjme7kf" path="res://assets/Aquarius-Bold.ttf" id="8_jlsqs"]
+[ext_resource type="PackedScene" uid="uid://dculllmbiq373" path="res://scenes/foca.tscn" id="8_wp0k4"]
+[ext_resource type="PackedScene" uid="uid://cncp6fld1nh2m" path="res://scenes/NyuronAzul.tscn" id="9_wp0k4"]
+[ext_resource type="Texture2D" uid="uid://c2uuajv3y6m7e" path="res://assets/botonDesapretado/btn1.png" id="12_e2s0e"]
+[ext_resource type="Texture2D" uid="uid://c2mt74wy0l05g" path="res://assets/botonApretado/Sprite-0002.png" id="13_gsxep"]
+[ext_resource type="Texture2D" uid="uid://c6mu4cfc82qik" path="res://assets/botonDesapretado/Sprite-0003.png" id="14_v0vrg"]
+[ext_resource type="Texture2D" uid="uid://br438irivv84q" path="res://assets/botonApretado/Sprite-0003.png" id="15_dg70y"]
+[ext_resource type="Texture2D" uid="uid://bujbvbfnqjmyi" path="res://assets/botonDesapretado/Sprite-0004.png" id="16_pnhog"]
+[ext_resource type="Texture2D" uid="uid://dcs35ycfaj2j8" path="res://assets/botonApretado/Sprite-0004.png" id="17_2c4at"]
+[ext_resource type="Texture2D" uid="uid://c6a4o416uici4" path="res://assets/botonDesapretado/Sprite-0005.png" id="18_g6wdg"]
+[ext_resource type="Texture2D" uid="uid://chcfefoeu0fv4" path="res://assets/botonApretado/Sprite-0005.png" id="19_hq6as"]
+[ext_resource type="Texture2D" uid="uid://sfuiusprhva0" path="res://assets/botonDesapretado/Sprite-0006.png" id="20_kxyth"]
+[ext_resource type="Texture2D" uid="uid://d2ytb40mg8puk" path="res://assets/botonApretado/Sprite-0006.png" id="21_cobve"]
+[ext_resource type="Texture2D" uid="uid://hmcgm7x7836c" path="res://assets/botonDesapretado/Sprite-0007.png" id="22_cmqll"]
+[ext_resource type="Texture2D" uid="uid://ny0xck0yj72h" path="res://assets/botonApretado/Sprite-0007.png" id="23_8cp6k"]
+[ext_resource type="Texture2D" uid="uid://buq4nn7cuggja" path="res://assets/botonDesapretado/Sprite-0008.png" id="24_8b871"]
+[ext_resource type="Texture2D" uid="uid://i5kn2i4wevl" path="res://assets/botonApretado/Sprite-0008.png" id="25_pdwbg"]
+[ext_resource type="Texture2D" uid="uid://vml5fvxtqxuy" path="res://assets/botonDesapretado/Sprite-0009.png" id="26_5grtr"]
+[ext_resource type="Texture2D" uid="uid://racs1v3hulc5" path="res://assets/botonApretado/Sprite-0009.png" id="27_vua0o"]
+[ext_resource type="Texture2D" uid="uid://corcfsrb24w0v" path="res://assets/botonDesapretado/Sprite-0010.png" id="28_t70y2"]
+[ext_resource type="Texture2D" uid="uid://cksnp12opduk5" path="res://assets/botonApretado/Sprite-0010.png" id="29_8gny2"]
+[ext_resource type="Texture2D" uid="uid://dnnwoan0v3n3r" path="res://assets/botonDesapretado/Sprite-0011.png" id="30_8b871"]
+[ext_resource type="Texture2D" uid="uid://8o3e2ack2kts" path="res://assets/botonApretado/Sprite-0011.png" id="31_pdwbg"]
+[ext_resource type="Texture2D" uid="uid://d05qswrmvds6h" path="res://assets/botonDesapretado/Sprite-0012.png" id="32_5grtr"]
+[ext_resource type="Texture2D" uid="uid://y0h7vd2dn73k" path="res://assets/botonApretado/Sprite-0012.png" id="33_vua0o"]
+[ext_resource type="Texture2D" uid="uid://c5vmc7ix63bl8" path="res://assets/botonDesapretado/Sprite-0013.png" id="34_t70y2"]
+[ext_resource type="Texture2D" uid="uid://bxb0i0cltlgls" path="res://assets/botonApretado/Sprite-0013.png" id="35_8gny2"]
+[ext_resource type="Texture2D" uid="uid://b5pkkky8jy6o1" path="res://assets/botonDesapretado/Sprite-0014.png" id="36_s3wmy"]
+[ext_resource type="Texture2D" uid="uid://b2s8s78ty3eee" path="res://assets/botonApretado/Sprite-0014.png" id="37_gdcyb"]
+[ext_resource type="Texture2D" uid="uid://dta1pk1b1eycj" path="res://assets/botonDesapretado/Sprite-0015.png" id="38_oa6sj"]
+[ext_resource type="Texture2D" uid="uid://cskx1wk6at11u" path="res://assets/botonApretado/Sprite-0015.png" id="39_0f1tp"]
+[ext_resource type="Texture2D" uid="uid://bcda0hwsipw30" path="res://assets/botonDesapretado/Sprite-0016.png" id="40_0qimb"]
+[ext_resource type="Texture2D" uid="uid://ca3pd3h5bgcbb" path="res://assets/botonApretado/Sprite-0016.png" id="41_in2eo"]
+[ext_resource type="Texture2D" uid="uid://m4vqkrf0827p" path="res://assets/Presentacion/vidrio.png" id="42_pdwbg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8b871"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdwbg"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(480, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5grtr"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(960, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vua0o"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(1440, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t70y2"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(1920, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gny2"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(2400, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3wmy"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(2880, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdcyb"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(3360, 0, 480, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oa6sj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8b871")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdwbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5grtr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vua0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t70y2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gny2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3wmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdcyb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5grtr"]
+texture = ExtResource("42_pdwbg")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_vcsgt")
+
+[node name="Fondo" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oa6sj")
+autoplay = "default"
+centered = false
+
+[node name="AnimalSpawner" type="Node2D" parent="."]
+position = Vector2(1, 5)
+script = ExtResource("4_jlsqs")
+animals = Array[PackedScene]([ExtResource("4_c01mt"), ExtResource("5_nxtc6"), ExtResource("6_lhr70"), ExtResource("6_nxtc6"), ExtResource("8_wp0k4"), ExtResource("9_wp0k4")])
+
+[node name="Node2D" parent="AnimalSpawner" instance=ExtResource("5_q8u5g")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="instruction_label" type="Label" parent="CanvasLayer"]
+custom_minimum_size = Vector2(480, 270)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_top = 40.0
+offset_right = 240.0
+offset_bottom = 310.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.937483, 0.465434, 0.40031, 1)
+theme_override_colors/font_outline_color = Color(0.0203888, 0.050523, 0.135514, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_jlsqs")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="number_buttons" type="GridContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -190.0
+offset_right = 111.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 5
+
+[node name="btn1" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("12_e2s0e")
+texture_pressed = ExtResource("13_gsxep")
+
+[node name="btn2" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("14_v0vrg")
+texture_pressed = ExtResource("15_dg70y")
+
+[node name="btn3" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("16_pnhog")
+texture_pressed = ExtResource("17_2c4at")
+
+[node name="btn4" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("18_g6wdg")
+texture_pressed = ExtResource("19_hq6as")
+
+[node name="btn5" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("20_kxyth")
+texture_pressed = ExtResource("21_cobve")
+
+[node name="btn6" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("22_cmqll")
+texture_pressed = ExtResource("23_8cp6k")
+
+[node name="btn7" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("24_8b871")
+texture_pressed = ExtResource("25_pdwbg")
+
+[node name="btn8" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("26_5grtr")
+texture_pressed = ExtResource("27_vua0o")
+
+[node name="btn9" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("28_t70y2")
+texture_pressed = ExtResource("29_8gny2")
+
+[node name="btn10" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("30_8b871")
+texture_pressed = ExtResource("31_pdwbg")
+
+[node name="btn11" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("32_5grtr")
+texture_pressed = ExtResource("33_vua0o")
+
+[node name="btn12" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("34_t70y2")
+texture_pressed = ExtResource("35_8gny2")
+
+[node name="btn13" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("36_s3wmy")
+texture_pressed = ExtResource("37_gdcyb")
+
+[node name="btn14" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("38_oa6sj")
+texture_pressed = ExtResource("39_0f1tp")
+
+[node name="btn15" type="TextureButton" parent="CanvasLayer/number_buttons"]
+layout_mode = 2
+texture_normal = ExtResource("40_0qimb")
+texture_pressed = ExtResource("41_in2eo")
+
+[node name="AnimalPreview" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -19.0
+offset_top = 50.0
+offset_right = 21.0
+offset_bottom = 90.0
+grow_horizontal = 2
+stretch_mode = 5
+
+[node name="animal_container" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 80.0
+offset_right = 20.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="intro_panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -75.0
+offset_right = 120.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5grtr")
+
+[node name="Label" type="Label" parent="CanvasLayer/intro_panel"]
+z_index = 10
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 238.0
+offset_bottom = 149.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_jlsqs")
+theme_override_font_sizes/font_size = 6
+text = "Bienvenido
+
+Observa atentamente cuántos animales aparecen en la pantalla y recuerda cuántos viste de cada tipo.
+
+Cuando terminen de pasar, selecciona el número correcto
+de animales que contaste. ¡Buena suerte!"
+horizontal_alignment = 1
+autowrap_mode = 3
+justification_flags = 0
+
+[node name="Button" type="Button" parent="CanvasLayer/intro_panel"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 119.0
+offset_right = 149.0
+offset_bottom = 145.0
+theme_override_fonts/font = ExtResource("8_jlsqs")
+theme_override_font_sizes/font_size = 8
+text = "¡ JUGAR !"
+autowrap_mode = 1

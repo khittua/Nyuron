@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0dpbnxl06o63"]
+
+[ext_resource type="Script" uid="uid://boithjnmkqjyj" path="res://scripts/Animal.gd" id="1_8lc27"]
+[ext_resource type="Texture2D" uid="uid://hyt7nchifv73" path="res://assets/NyuronSoda-sheet.png" id="2_8lc27"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phj74"]
+atlas = ExtResource("2_8lc27")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug07d"]
+atlas = ExtResource("2_8lc27")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp2tf"]
+atlas = ExtResource("2_8lc27")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yokx"]
+atlas = ExtResource("2_8lc27")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqblr"]
+atlas = ExtResource("2_8lc27")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lc27"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phj74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug07d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp2tf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yokx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqblr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NyuronSoda" type="Node2D"]
+script = ExtResource("1_8lc27")
+type_id = "nyuron_soda"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -4)
+sprite_frames = SubResource("SpriteFrames_8lc27")
+autoplay = "default"
+frame_progress = 0.00592364
+speed_scale = 4.0

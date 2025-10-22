@@ -1,0 +1,112 @@
+[gd_scene load_steps=21 format=3 uid="uid://ciekfk8tqt2rq"]
+
+[ext_resource type="Script" uid="uid://br0ie6mf36tvv" path="res://scripts/main.gd" id="1_vcsgt"]
+[ext_resource type="Texture2D" uid="uid://c1eoxwj3cvfu0" path="res://assets/background-sheet.png" id="2_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://n2d06463ygfr" path="res://scenes/NyuronLengua.tscn" id="4_c01mt"]
+[ext_resource type="Script" uid="uid://nkfpcll1tu7v" path="res://scripts/AnimalSpawner.gd" id="4_jlsqs"]
+[ext_resource type="PackedScene" uid="uid://d0dpbnxl06o63" path="res://scenes/NyuronSoda.tscn" id="5_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://elgmtco4bilm" path="res://scenes/AnimalSpawner.tscn" id="5_q8u5g"]
+[ext_resource type="PackedScene" uid="uid://dv7q5vtw7lt8p" path="res://scenes/Tortuguita.tscn" id="6_lhr70"]
+[ext_resource type="PackedScene" uid="uid://ycqerc6ybbyk" path="res://scenes/TortuguitaEstrella.tscn" id="6_nxtc6"]
+[ext_resource type="FontFile" uid="uid://cvpke7jjme7kf" path="res://assets/Aquarius-Bold.ttf" id="8_jlsqs"]
+[ext_resource type="PackedScene" uid="uid://dculllmbiq373" path="res://scenes/foca.tscn" id="8_wp0k4"]
+[ext_resource type="PackedScene" uid="uid://cncp6fld1nh2m" path="res://scenes/NyuronAzul.tscn" id="9_wp0k4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlsqs"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8u5g"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(480, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhr70"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(960, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp0k4"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(1440, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjd11"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(1920, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmy6f"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(2400, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwfav"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(2880, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p2gp"]
+atlas = ExtResource("2_nxtc6")
+region = Rect2(3360, 0, 480, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cvmbd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlsqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8u5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhr70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp0k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjd11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmy6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwfav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p2gp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_vcsgt")
+
+[node name="Fondo" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cvmbd")
+autoplay = "default"
+frame_progress = 0.91895
+centered = false
+
+[node name="AnimalSpawner" type="Node2D" parent="."]
+position = Vector2(1, 5)
+script = ExtResource("4_jlsqs")
+spawn_interval = null
+animals = Array[PackedScene]([ExtResource("4_c01mt"), ExtResource("5_nxtc6"), ExtResource("6_lhr70"), ExtResource("6_nxtc6"), ExtResource("8_wp0k4"), ExtResource("9_wp0k4")])
+sand_y_range = null
+left_limit = null
+right_limit = null
+
+[node name="Node2D" parent="AnimalSpawner" instance=ExtResource("5_q8u5g")]
+spawn_interval = null
+sand_y_range = null
+left_limit = null
+right_limit = null
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="instruction_label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("8_jlsqs")
+
+[node name="confirm_button" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0

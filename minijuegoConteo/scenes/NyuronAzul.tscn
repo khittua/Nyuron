@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://cncp6fld1nh2m"]
+
+[ext_resource type="Script" uid="uid://boithjnmkqjyj" path="res://scripts/Animal.gd" id="1_02f6r"]
+[ext_resource type="Texture2D" uid="uid://dhem3qpn64x8p" path="res://assets/NyronAzul.png" id="2_02f6r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x640g"]
+atlas = ExtResource("2_02f6r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqkd2"]
+atlas = ExtResource("2_02f6r")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkwb4"]
+atlas = ExtResource("2_02f6r")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjkx3"]
+atlas = ExtResource("2_02f6r")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5cbt"]
+atlas = ExtResource("2_02f6r")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7npj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x640g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqkd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkwb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjkx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5cbt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NyuronAzul" type="Node2D"]
+script = ExtResource("1_02f6r")
+type_id = "nyuron_azul"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -4)
+sprite_frames = SubResource("SpriteFrames_u7npj")
+autoplay = "default"
+frame_progress = 0.290505
+speed_scale = 4.0
