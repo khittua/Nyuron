@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnnjmtrlk8n4q"]
+
+[ext_resource type="Texture2D" uid="uid://cvnjq3x2yq3hs" path="res://assets/bebia.png" id="1_rlh0d"]
+[ext_resource type="Script" uid="uid://c3nv3g5s0qh21" path="res://scripts/Lata.gd" id="1_ul0bc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x1qnh"]
+radius = 15.297058
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_ul0bc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rlh0d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x1qnh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
