@@ -1,0 +1,235 @@
+[gd_scene load_steps=25 format=3 uid="uid://dcmhjquv3htys"]
+
+[ext_resource type="Script" uid="uid://d0i2t0k02dgea" path="res://scripts/memorice.gd" id="1_lp04r"]
+[ext_resource type="Texture2D" uid="uid://c2t3j84axe2yt" path="res://assets/spr_background-Sheet.png" id="1_wyb4n"]
+[ext_resource type="PackedScene" uid="uid://brg60trfj8ixx" path="res://scenes/almeja_camaron.tscn" id="3_qq7u7"]
+[ext_resource type="PackedScene" uid="uid://cwvn7x2y2isvf" path="res://scenes/almeja_zapatilla.tscn" id="4_nqjlq"]
+[ext_resource type="FontFile" uid="uid://chk4hobehunho" path="res://Aquarius-Bold.ttf" id="5_a42h2"]
+[ext_resource type="Texture2D" uid="uid://q5p5xi23bjle" path="res://assets/reintentar1.png" id="5_oqra4"]
+[ext_resource type="Texture2D" uid="uid://dum0oploxgfqp" path="res://assets/reintentar2.png" id="6_a42h2"]
+[ext_resource type="Texture2D" uid="uid://chk0paoiosajp" path="res://assets/volver1.png" id="7_y1qdc"]
+[ext_resource type="Texture2D" uid="uid://chu67pyuaeum3" path="res://assets/volver2.png" id="8_g48og"]
+[ext_resource type="AudioStream" uid="uid://d3x8apqu3oaxl" path="res://audio/ocean-waves-376898.mp3" id="10_srer4"]
+[ext_resource type="AudioStream" uid="uid://cnsavqsjbys2" path="res://audio/Correct.mp3" id="11_c3cf4"]
+[ext_resource type="AudioStream" uid="uid://dt5qi0jjvn050" path="res://audio/mas_puntos.mp3" id="12_3k1a3"]
+[ext_resource type="AudioStream" uid="uid://fwkjhgppxxjd" path="res://audio/Incorrect.mp3" id="12_srer4"]
+[ext_resource type="AudioStream" uid="uid://d4hd7et0ekk0d" path="res://audio/pop.mp3" id="13_srer4"]
+[ext_resource type="AudioStream" uid="uid://yhqtxmukjqaa" path="res://audio/menos_puntos.mp3" id="14_7sfvu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vrkn"]
+atlas = ExtResource("1_wyb4n")
+region = Rect2(0, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu7sn"]
+atlas = ExtResource("1_wyb4n")
+region = Rect2(270, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jix8l"]
+atlas = ExtResource("1_wyb4n")
+region = Rect2(540, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glbon"]
+atlas = ExtResource("1_wyb4n")
+region = Rect2(810, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlkkf"]
+atlas = ExtResource("1_wyb4n")
+region = Rect2(1080, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe12f"]
+atlas = ExtResource("1_wyb4n")
+region = Rect2(1350, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qtwp"]
+atlas = ExtResource("1_wyb4n")
+region = Rect2(1620, 0, 270, 480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dy7ct"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vrkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu7sn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jix8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glbon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlkkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe12f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qtwp")
+}],
+"loop": true,
+"name": &"fondo",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lp04r"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="main" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_lp04r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(135, 240)
+sprite_frames = SubResource("SpriteFrames_dy7ct")
+animation = &"fondo"
+autoplay = "fondo"
+
+[node name="Almejas" type="Node2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="almeja_camaron" parent="." instance=ExtResource("3_qq7u7")]
+visible = false
+
+[node name="almeja_zapatilla" parent="." instance=ExtResource("4_nqjlq")]
+visible = false
+
+[node name="almeja_camaron2" parent="." instance=ExtResource("3_qq7u7")]
+visible = false
+
+[node name="almeja_zapatilla2" parent="." instance=ExtResource("4_nqjlq")]
+visible = false
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PuntosLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_a42h2")
+text = "Puntos: 100"
+
+[node name="GameOverPanel" type="Panel" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lp04r")
+
+[node name="score" type="Label" parent="UI/GameOverPanel"]
+layout_mode = 0
+offset_left = 91.5
+offset_top = 138.5
+offset_right = 178.5
+offset_bottom = 166.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_a42h2")
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="UI/GameOverPanel"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 101.0
+offset_right = 233.0
+offset_bottom = 184.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_a42h2")
+
+[node name="Buttons" type="HBoxContainer" parent="UI/GameOverPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.5
+offset_top = 72.0
+offset_right = 100.5
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="Retrybutton" type="TextureButton" parent="UI/GameOverPanel/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("5_oqra4")
+texture_pressed = ExtResource("6_a42h2")
+
+[node name="BackButton" type="TextureButton" parent="UI/GameOverPanel/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("7_y1qdc")
+texture_pressed = ExtResource("8_g48og")
+
+[node name="WinPanel" type="Panel" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lp04r")
+
+[node name="Buttons" type="HBoxContainer" parent="UI/WinPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.5
+offset_top = 72.0
+offset_right = 100.5
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="Retrybutton" type="TextureButton" parent="UI/WinPanel/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("5_oqra4")
+texture_pressed = ExtResource("6_a42h2")
+
+[node name="BackButton" type="TextureButton" parent="UI/WinPanel/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("7_y1qdc")
+texture_pressed = ExtResource("8_g48og")
+
+[node name="score2" type="Label" parent="UI/WinPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Title2" type="Label" parent="UI/WinPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="MusicaFondo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_srer4")
+volume_db = -10.187
+autoplay = true
+parameters/looping = true
+
+[node name="SFX_Acierto" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_c3cf4")
+
+[node name="SFX_mas_puntos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_3k1a3")
+
+[node name="SFX_Error" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_srer4")
+
+[node name="SFX_menos_puntos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_7sfvu")
+
+[node name="SFX_AbrirAlmeja" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_srer4")
