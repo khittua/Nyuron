@@ -103,14 +103,14 @@ worm_scene = ExtResource("3_jjvhh")
 
 [node name="ScoreLabel" type="Label" parent="UI"]
 anchors_preset = -1
-anchor_left = -0.011000001
-anchor_top = -0.47400004
-anchor_right = -0.011000001
-anchor_bottom = -0.47400004
+anchor_left = -0.011
+anchor_top = -0.474
+anchor_right = -0.011
+anchor_bottom = -0.474
 offset_left = 76.97
-offset_top = 227.52002
+offset_top = 227.52
 offset_right = 196.97
-offset_bottom = 252.52002
+offset_bottom = 252.52
 grow_horizontal = 2
 pivot_offset = Vector2(0, 10)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -151,7 +151,7 @@ position = Vector2(111, 435)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Bucket"]
 texture_repeat = 1
-position = Vector2(-9.000001, -13.000002)
-scale = Vector2(1.2343749, 1.1462264)
+position = Vector2(-9, -13)
+scale = Vector2(1.23437, 1.14623)
 sprite_frames = SubResource("SpriteFrames_ynf5e")
 animation = &"con 4 gusano"

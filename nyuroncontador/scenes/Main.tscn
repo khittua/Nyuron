@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://ciekfk8tqt2rq"]
+[gd_scene load_steps=57 format=3 uid="uid://ciekfk8tqt2rq"]
 
 [ext_resource type="Script" uid="uid://br0ie6mf36tvv" path="res://scripts/main.gd" id="1_vcsgt"]
 [ext_resource type="Texture2D" uid="uid://c1eoxwj3cvfu0" path="res://assets/background-sheet.png" id="2_nxtc6"]
@@ -42,6 +42,10 @@
 [ext_resource type="Texture2D" uid="uid://bcda0hwsipw30" path="res://assets/botonDesapretado/Sprite-0016.png" id="40_0qimb"]
 [ext_resource type="Texture2D" uid="uid://ca3pd3h5bgcbb" path="res://assets/botonApretado/Sprite-0016.png" id="41_in2eo"]
 [ext_resource type="Texture2D" uid="uid://m4vqkrf0827p" path="res://assets/Presentacion/vidrio.png" id="42_pdwbg"]
+[ext_resource type="Texture2D" uid="uid://m12q1qnvfhpw" path="res://assets/botonDesapretado/reintentar1.png" id="43_vua0o"]
+[ext_resource type="Texture2D" uid="uid://782bylbo1udv" path="res://assets/botonApretado/reintentar2.png" id="44_t70y2"]
+[ext_resource type="Texture2D" uid="uid://d0mh3lpddrmn3" path="res://assets/botonDesapretado/volver1.png" id="45_8gny2"]
+[ext_resource type="Texture2D" uid="uid://vikqojte25qu" path="res://assets/botonApretado/volver2.png" id="46_s3wmy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8b871"]
 atlas = ExtResource("2_nxtc6")
@@ -257,6 +261,20 @@ grow_horizontal = 2
 theme_override_constants/separation = 12
 alignment = 1
 
+[node name="score_label" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -465.0
+offset_right = -273.0
+offset_bottom = 25.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.937255, 0.466667, 0.4, 1)
+theme_override_fonts/font = ExtResource("8_jlsqs")
+text = "Puntaje: 0 "
+
 [node name="intro_panel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -285,7 +303,7 @@ theme_override_fonts/font = ExtResource("8_jlsqs")
 theme_override_font_sizes/font_size = 6
 text = "Bienvenido
 
-Observa atentamente cuántos animales aparecen en la pantalla y recuerda cuántos viste de cada tipo.
+Observa atentamente cuántos animales aparecen en la pantalla y recuerda cuántos viste del tipo de animal que te piden contar.
 
 Cuando terminen de pasar, selecciona el número correcto
 de animales que contaste. ¡Buena suerte!"
@@ -303,3 +321,56 @@ theme_override_fonts/font = ExtResource("8_jlsqs")
 theme_override_font_sizes/font_size = 8
 text = "¡ JUGAR !"
 autowrap_mode = 1
+
+[node name="game_over_panel" type="Panel" parent="CanvasLayer"]
+process_mode = 3
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="tittle_label" type="Label" parent="CanvasLayer/game_over_panel"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 68.0
+offset_right = 361.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0.937255, 0.466667, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0.0196078, 0.0509804, 0.137255, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8_jlsqs")
+theme_override_font_sizes/font_size = 20
+text = "¡Fin del Juego!"
+horizontal_alignment = 1
+
+[node name="points_label" type="Label" parent="CanvasLayer/game_over_panel"]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 95.0
+offset_right = 303.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.937255, 0.466667, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0.0196078, 0.0509804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("8_jlsqs")
+text = "Puntos: 0"
+horizontal_alignment = 1
+
+[node name="retry_button" type="TextureButton" parent="CanvasLayer/game_over_panel"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 140.0
+offset_right = 209.0
+offset_bottom = 180.0
+texture_normal = ExtResource("43_vua0o")
+texture_pressed = ExtResource("44_t70y2")
+
+[node name="back_button" type="TextureButton" parent="CanvasLayer/game_over_panel"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 140.0
+offset_right = 364.0
+offset_bottom = 180.0
+texture_normal = ExtResource("45_8gny2")
+texture_pressed = ExtResource("46_s3wmy")

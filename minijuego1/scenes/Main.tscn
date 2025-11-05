@@ -65,7 +65,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7mycd"]
 radius = 6.0
-height = 39.999985
+height = 40.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kxyth"]
 atlas = ExtResource("9_xa025")
@@ -310,7 +310,7 @@ floating_text_scene = ExtResource("5_36rkl")
 position = Vector2(135, 240)
 sprite_frames = SubResource("SpriteFrames_nfivy")
 autoplay = "default"
-frame_progress = 0.012180646
+frame_progress = 0.0121806
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -10
@@ -322,7 +322,7 @@ metadata/_edit_lock_ = true
 z_index = 150
 offset_right = 272.0
 offset_bottom = 483.0
-color = Color(0, 0.74400806, 1.5931802, 0.20784314)
+color = Color(0, 0.744008, 1.59318, 0.207843)
 
 [node name="bubbles" type="CPUParticles2D" parent="."]
 position = Vector2(135, 428)
@@ -342,11 +342,11 @@ script = ExtResource("3_c01mt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-2, -12)
-rotation = 1.5707964
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_7mycd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(2.0000005, -5)
+position = Vector2(2, -5)
 sprite_frames = SubResource("SpriteFrames_3p2gp")
 animation = &"idle"
 
@@ -355,7 +355,7 @@ position = Vector2(-1, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hitbox"]
 position = Vector2(-1, -11)
-rotation = 1.5707964
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_7mycd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -366,8 +366,8 @@ offset_left = 9.0
 offset_top = 9.0
 offset_right = 49.0
 offset_bottom = 33.0
-theme_override_colors/font_color = Color(0.80832165, 0.78102803, 0.47974384, 1)
-theme_override_colors/font_outline_color = Color(0.05882353, 0.16862746, 0.22352941, 1)
+theme_override_colors/font_color = Color(0.808322, 0.781028, 0.479744, 1)
+theme_override_colors/font_outline_color = Color(0.0588235, 0.168627, 0.223529, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("14_xa025")
@@ -378,8 +378,8 @@ offset_left = 178.0
 offset_top = 9.0
 offset_right = 240.0
 offset_bottom = 35.0
-theme_override_colors/font_color = Color(1, 0.633932, 0.58642334, 1)
-theme_override_colors/font_outline_color = Color(0.05882353, 0.16862746, 0.22352941, 1)
+theme_override_colors/font_color = Color(1, 0.633932, 0.586423, 1)
+theme_override_colors/font_outline_color = Color(0.0588235, 0.168627, 0.223529, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("14_xa025")
 theme_override_font_sizes/font_size = 13
@@ -391,7 +391,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.86898494, 0.8689849, 0.8689849, 1)
+theme_override_colors/font_color = Color(0.868985, 0.868985, 0.868985, 1)
 theme_override_fonts/font = ExtResource("14_xa025")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -417,8 +417,8 @@ offset_right = 43.5
 offset_bottom = -74.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.7411765, 0.2784314, 0.19215687, 1)
-theme_override_colors/font_outline_color = Color(0.05882353, 0.16862746, 0.22352941, 1)
+theme_override_colors/font_color = Color(0.741176, 0.278431, 0.192157, 1)
+theme_override_colors/font_outline_color = Color(0.0588235, 0.168627, 0.223529, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("14_xa025")
 theme_override_font_sizes/font_size = 11
@@ -434,8 +434,8 @@ offset_top = 101.0
 offset_right = 98.0
 offset_bottom = 184.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.92941177, 0.37254903, 0.27058825, 1)
-theme_override_colors/font_outline_color = Color(0.05882353, 0.16862746, 0.22352941, 1)
+theme_override_colors/font_color = Color(0.929412, 0.372549, 0.270588, 1)
+theme_override_colors/font_outline_color = Color(0.0588235, 0.168627, 0.223529, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("14_xa025")
 theme_override_font_sizes/font_size = 20
@@ -497,7 +497,7 @@ gravity = Vector2(-40, 0)
 initial_velocity_min = 100.0
 initial_velocity_max = 150.0
 scale_amount_max = 2.0
-color = Color(1, 1, 1, 0.7176471)
+color = Color(1, 1, 1, 0.717647)
 
 [node name="pescao1izq" type="CPUParticles2D" parent="."]
 z_index = -5
@@ -513,7 +513,7 @@ gravity = Vector2(40, 0)
 initial_velocity_min = 100.0
 initial_velocity_max = 150.0
 scale_amount_max = 2.0
-color = Color(1, 1, 1, 0.7176471)
+color = Color(1, 1, 1, 0.717647)
 
 [node name="pescao2der" type="CPUParticles2D" parent="."]
 z_index = -5
@@ -531,7 +531,7 @@ initial_velocity_min = 100.0
 initial_velocity_max = 150.0
 scale_amount_min = 2.0
 scale_amount_max = 2.5
-color = Color(1, 1, 1, 0.6745098)
+color = Color(1, 1, 1, 0.67451)
 
 [node name="DifficultyTimer" type="Timer" parent="."]
 wait_time = 30.0
