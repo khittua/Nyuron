@@ -3,7 +3,7 @@ extends Node
 const SAVE_PATH = "user://high_scores.cfg"
 
 # Señal para avisar a la tienda y al personaje que la apariencia cambió
-signal skin_updated ### NUEVO
+signal skin_updated
 
 # Datos
 var high_scores = {
@@ -17,8 +17,7 @@ var high_scores = {
 var coins := 0
 var inventory: Array = []
 
-# ### NUEVO: Variables para guardar lo equipado actualmente
-# Define aquí los nombres por defecto de tus sprites base
+# Definimos los items que se tienen equipados
 var equipped_items = {
 	"caparazon": "default", 
 	"accesorio": "none"
@@ -41,12 +40,11 @@ func get_coins() -> int:
 func add_to_inventory(item_name: String):
 	if not inventory.has(item_name):
 		inventory.append(item_name)
-		save_to_file() # ### NUEVO: Es buena idea guardar apenas compras
+		save_to_file()
 
 func get_inventory() -> Array:
 	return inventory
 
-# ### NUEVO: Funciones de Equipado
 func equip_item(category: String, item_name: String):
 	# Verificamos si tenemos el item O si es un item por defecto (como "none" o "default")
 	if inventory.has(item_name) or item_name == "default" or item_name == "none":
@@ -96,7 +94,6 @@ func load_high_scores():
 	coins = config.get_value("player_data", "coins", 0)
 	inventory = config.get_value("inventory", "items", [])
 	
-	# ### NUEVO: Cargar equipamiento. Si no existe, usa los valores por defecto definidos arriba
 	equipped_items = config.get_value("player_data", "equipped_items", equipped_items)
 
 	print("Puntajes cargados:", high_scores)
@@ -114,7 +111,6 @@ func save_to_file():
 	config.set_value("player_data", "coins", coins)
 	config.set_value("inventory", "items", inventory)
 	
-	# ### NUEVO: Guardar equipamiento
 	config.set_value("player_data", "equipped_items", equipped_items)
 
 	var error = config.save(SAVE_PATH)

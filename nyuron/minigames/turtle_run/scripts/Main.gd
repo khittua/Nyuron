@@ -1,10 +1,13 @@
 extends Node2D
 
+# UI y Nodos
 @onready var parallax := $ParallaxBackground
 @onready var spawn_timer := $SpawnTimer
 @onready var obstacle_container := $ObstacleContainer
 @onready var bonus_container := $BonusContainer
 @onready var score_label := $UI/Label
+
+# Paneles UI
 @onready var panel: Control = $UI/GameOverPanel
 @onready var title_lbl: Label = $UI/GameOverPanel/Title
 @onready var score_lbl: Label = $UI/GameOverPanel/Score
@@ -13,26 +16,31 @@ extends Node2D
 @onready var backButton: Button = $UI/backButton
 @onready var intro_panel := $intro_panel
 @onready var intro_button := $intro_panel/Button
+
+# Audio
 @onready var sfx_bonus := $AudioBonus
 @onready var sfx_hit := $AudioHit
+
+# Configuración Exportada
 @export var scroll_speed := 200.0
 @export var floating_text_scene: PackedScene
 @export var obstacle_scene: PackedScene
 @export var bonus_scene: PackedScene
 @export var lanes := [100.0, 160.0, 220.0]
 
+# Variables de Estado
 var last_coins_gained: int = 0
 var score: float = 0.0
 var last_lane := -1
 var elapsed_time := 0.0
 var speed_increase_interval := 6.0
 var speed_multiplier := 1.0
-
 var is_paused := false
 var is_intro := true
+
 signal back_to_menu
 
-#Configuracion Inicial
+# Configuración Inicial
 func _ready() -> void:
 	var ui_node := $UI
 	if ui_node is CanvasLayer:
@@ -71,7 +79,7 @@ func _ready() -> void:
 		if anim:
 			anim.speed_scale = 0.0
 
-#Intro
+# Intro
 func _on_intro_play_pressed():
 	intro_panel.visible = false
 	is_intro = false
@@ -86,7 +94,7 @@ func _on_intro_play_pressed():
 
 	backButton.visible = true
 
-#Loop del fondo
+# Loop Principal
 func _process(delta: float) -> void:
 	if is_paused or is_intro:
 		return
@@ -104,7 +112,7 @@ func _process(delta: float) -> void:
 	if turtle:
 		turtle.update_animation_speed(speed_multiplier)
 
-#Spawneo de obstaculos
+# Spawning de obstaculos
 func _on_SpawnTimer_timeout() -> void:
 	if is_paused or is_intro:
 		return
@@ -141,7 +149,7 @@ func spawn_bonus(y_pos: float) -> void:
 func add_score_bonus(amount: int) -> void:
 	score += amount
 
-# Juego terminado
+# Juego Terminado
 func game_over() -> void:
 	if is_paused:
 		return
@@ -187,7 +195,7 @@ func _show_game_over() -> void:
 	panel.visible = true
 	back_btn.visible = true
 
-# Sonidos
+# Sonidos y Efectos
 func show_floating_text(pos: Vector2, text := "+50", color := Color(0.645, 0.645, 0.0, 1.0)) -> void:
 	if floating_text_scene == null:
 		return
@@ -204,7 +212,7 @@ func play_hit_sound() -> void:
 	if sfx_hit:
 		sfx_hit.play()
 
-# Navegacion
+# Navegación
 func _on_back_pressed() -> void:
 	if is_paused:
 		resume_game()
@@ -271,7 +279,7 @@ func resume_game():
 
 	panel.visible = false
 
-# Pause Helpers
+# Auxiliares de pausa
 func pause_all_obstacles(pause: bool):
 	for obstacle in obstacle_container.get_children():
 		if is_instance_valid(obstacle):

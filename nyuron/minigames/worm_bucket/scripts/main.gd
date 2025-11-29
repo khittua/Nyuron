@@ -20,9 +20,9 @@ extends Node2D
 @onready var damage_border: ColorRect = $UI/DamageBorder
 @onready var damage_mat: ShaderMaterial = damage_border.material
 
-# AUDIO (Actualizado con tus nombres exactos)
-@onready var sfx_catch: AudioStreamPlayer = $FSX_Catch
-@onready var sfx_fail: AudioStreamPlayer = $FSX_Fail
+# Audio
+@onready var sfx_catch: AudioStreamPlayer = $SFX_Catch
+@onready var sfx_fail: AudioStreamPlayer = $SFX_Fail
 
 # Estado
 var score := 0
@@ -30,13 +30,11 @@ var bucket_count := 0
 var is_stunned := false
 var last_coins_gained: int = 0
 var is_paused := false
+var damage_tween: Tween
 
 signal back_to_menu
 
-# Tween de daño
-var damage_tween: Tween
-
-# Ready / inicio
+# Inicialización
 func _ready() -> void:
 	add_to_group("worm_game")
 
@@ -84,7 +82,7 @@ func _show_intro():
 	intro_button.pressed.connect(_start_game)
 
 func _start_game():
-	print("INICIANDO JUEGO...")
+	print("Iniciando juego...")
 
 	intro_panel.visible = false
 	is_paused = false
@@ -169,13 +167,10 @@ func _on_worm_request_catch(worm: Node) -> void:
 	if is_stunned:
 		return
 
-	# Lógica Gusano MALO (Usamos SFX_Fail)
+	# Lógica Gusano Malo
 	if "is_bad" in worm and worm.is_bad:
-		
-		# --- SONIDO ERROR ---
 		if sfx_fail:
 			sfx_fail.play()
-		# --------------------
 			
 		is_stunned = true
 		if nyuron.has_method("stun"):
@@ -191,7 +186,7 @@ func _on_worm_request_catch(worm: Node) -> void:
 			worm.queue_free()
 		return
 
-	# Lógica Gusano NORMAL
+	# Lógica Gusano Normal
 	var is_recapture: bool = ("state" in worm and worm.state == "ESCAPING")
 
 	if nyuron.has_method("shoot_to"):
@@ -214,11 +209,9 @@ func _on_worm_request_catch(worm: Node) -> void:
 			
 			if not is_recapture:
 				score += 1
-				# --- SONIDO CAPTURA (Usamos SFX_Catch) ---
 				if sfx_catch:
 					sfx_catch.pitch_scale = randf_range(0.9, 1.1)
 					sfx_catch.play()
-				# -----------------------------------------
 			
 			bucket_count += 1
 			_update_ui()
@@ -290,7 +283,7 @@ func _update_ui() -> void:
 			4: bucket_sprite.play("con 4 gusano")
 			_: bucket_sprite.play("balde lleno")
 	else:
-		print("ERROR: _update_ui -> bucket_sprite es null.")
+		print("ERROR: bucket_sprite es null.")
 
 func _start_damage_pulse() -> void:
 	if damage_tween:
@@ -315,7 +308,7 @@ func _unhandled_input(event):
 			resume_game()
 
 func pause_game():
-	print("Pausando worm catch...")
+	print("Pausando juego...")
 	is_paused = true
 
 	game_timer.paused = true
@@ -342,10 +335,10 @@ func pause_game():
 	score_lbl.text = "Puntos: %d" % score
 	back_btn.visible = true
 
-	print("Worm catch pausado")
+	print("Juego pausado")
 
 func resume_game():
-	print("Reanudando worm catch...")
+	print("Reanudando juego...")
 	is_paused = false
 
 	game_timer.paused = false
@@ -366,7 +359,7 @@ func resume_game():
 
 	game_over_panel.visible = false
 
-	print("Worm catch reanudado")
+	print("Juego reanudado")
 
 func _on_backButton_pressed():
 	if not is_paused:

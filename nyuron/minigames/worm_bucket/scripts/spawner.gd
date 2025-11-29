@@ -3,7 +3,7 @@ class_name Spawner
 
 signal spawned(worm: Node)
 
-# Propiedades
+# Configuración
 @export var worm_scene: PackedScene
 @export var bad_ratio := 0.25
 @export var start_interval := 1.8
@@ -17,20 +17,17 @@ var current_interval := start_interval
 var time_elapsed := 0.0
 var worm_hole_map := {}
 
-
 func _ready():
 	randomize()
 	spawn_timer.timeout.connect(_on_SpawnTimer_timeout)
 	spawn_timer.start(current_interval)
-
 
 func _process(delta):
 	time_elapsed += delta
 	current_interval = max(min_interval, start_interval - difficulty_speed * time_elapsed)
 	spawn_timer.wait_time = current_interval
 
-
-# Spawn principal
+# Ciclo de aparición
 func _on_SpawnTimer_timeout():
 	var available_spots: Array[Marker2D] = []
 
@@ -55,8 +52,7 @@ func _on_SpawnTimer_timeout():
 	else:
 		_spawn_worm_at_spot(spot)
 
-
-# Crear gusano y registrar su agujero
+# Instanciar gusano
 func _spawn_worm_at_spot(spot: Marker2D):
 	var w: Worm = worm_scene.instantiate()
 	w.position = spot.global_position
@@ -72,8 +68,7 @@ func _spawn_worm_at_spot(spot: Marker2D):
 		worm_hole_map[w] = hole
 		w.tree_exiting.connect(_on_worm_exiting.bind(w), CONNECT_ONE_SHOT)
 
-
-# Cerrar agujero al desaparecer gusano
+# Limpieza al salir
 func _on_worm_exiting(worm: Worm):
 	if worm_hole_map.has(worm):
 		var hole_to_close = worm_hole_map[worm]
