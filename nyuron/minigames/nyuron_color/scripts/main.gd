@@ -31,7 +31,7 @@ var player_input: Array[String] = []
 var colors: Array[String] = ["red", "blue", "green", "yellow"]
 var showing_sequence := false
 var game_started := false
-
+var is_processing_input := false
 signal back_to_menu
 
 # Inicio
@@ -104,24 +104,43 @@ func _play_sequence() -> void:
 func _on_crab_pressed(color: String) -> void:
 	if panel.visible or is_paused:
 		return
-	if showing_sequence or not game_started:
-		print("Bloqueado (turno del juego o aun no inicia).")
+	
+	# Agregamos 'is_processing_input' a la condición
+	if showing_sequence or not game_started or is_processing_input:
+		# print("Bloqueado (turno del juego, aun no inicia o procesando input).")
 		return
 
+	# Bloqueamos el input en el main
+	is_processing_input = true
+
 	player_input.append(color)
+	
+	# Nota: _flash() es asíncrono pero no lo esperamos con await aquí
+	# para que el juego se sienta fluido, pero el input ya está registrado.
 	crabs[color]._flash()
 	print("Crab tocado:", color)
 
 	var index := player_input.size() - 1
+	
+	# Verificación de seguridad por si el index se desborda
 	if index >= sequence.size():
+		is_processing_input = false # Liberamos si hay error
 		return
 
 	if player_input[index] != sequence[index]:
 		_game_over()
+		is_processing_input = false # Liberamos en game over
 		return
 
 	if player_input.size() == sequence.size():
+		# Esperamos un poco antes de la siguiente ronda para que no se sienta abrupto
+		await get_tree().create_timer(0.5).timeout 
 		_next_round()
+	
+	# Liberamos el input después de una fracción de segundo
+	# para permitir tocar el siguiente color
+	await get_tree().create_timer(0.1).timeout
+	is_processing_input = false
 
 # Rondas
 func _next_round() -> void:
