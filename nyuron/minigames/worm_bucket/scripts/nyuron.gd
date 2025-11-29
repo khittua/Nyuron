@@ -5,13 +5,16 @@ class_name Nyuron
 signal claw_reached_target(target_pos: Vector2)
 signal shot_finished
 
+# Referencias Visuales
 @onready var anim: AnimatedSprite2D = $Body
 @onready var claw_origin: Marker2D = $Body/ClawOrigin
 
+# Garra Normal
 @onready var claw_left_node: Node2D = $ClawLeft
 @onready var claw_line: Line2D = $ClawLeft/Line2D
 @onready var claw_tip: AnimatedSprite2D = $ClawLeft/ClawTip
 
+# Garra Recaptura
 @onready var claw_left_recap: Node2D = $ClawLeft_Recapture
 @onready var claw_line_recap: Line2D = $ClawLeft_Recapture/Line2D
 @onready var claw_tip_recap: AnimatedSprite2D = $ClawLeft_Recapture/ClawTip
@@ -20,7 +23,7 @@ signal shot_finished
 var is_stunned := false
 var is_shooting := false
 
-# --- DICCIONARIOS DE SKIN (NUEVO) ---
+# Configuración de Skins
 var color_codes = {
 	"default": "",
 	"caparazon": "",
@@ -39,11 +42,21 @@ var accessory_codes = {
 	"Cadena": "_cadena"
 }
 
+# Inicialización
 func _ready():
-	# Aplicar la skin al iniciar el juego
 	update_skin()
 
-# --- FUNCIONES DE SKIN (NUEVO) ---
+# Loop principal
+func _process(_delta):
+	if claw_left_node.visible:
+		claw_left_node.global_position = claw_origin.global_position
+	if claw_left_recap.visible:
+		claw_left_recap.global_position = claw_origin.global_position
+
+	_update_tip(claw_line, claw_tip)
+	_update_tip(claw_line_recap, claw_tip_recap)
+
+# Sistema de Skins
 func update_skin():
 	var id_cuerpo = ScoreManager.get_equipped_item("caparazon")
 	var id_accesorio = ScoreManager.get_equipped_item("accesorio")
@@ -53,7 +66,7 @@ func update_skin():
 	
 	var folder_path = "res://Accesorios/global/"
 	
-	# 1. Cargamos la textura para IDLE (spr_rest -> CON brazos)
+	# Cargar textura Idle (con brazos)
 	var path_idle = folder_path + "spr_rest" + color_suffix + acc_suffix + ".png"
 	var tex_idle = null
 	
@@ -62,7 +75,7 @@ func update_skin():
 	else:
 		print("Error: No existe textura Idle ", path_idle)
 
-	# 2. Cargamos la textura para GRAB (spr_no_claw -> SIN brazos)
+	# Cargar textura Grab (sin brazos)
 	var path_grab = folder_path + "spr_no_claw" + color_suffix + acc_suffix + ".png"
 	var tex_grab = null
 	
@@ -71,7 +84,6 @@ func update_skin():
 	else:
 		print("Error: No existe textura Grab ", path_grab)
 	
-	# 3. Aplicamos ambas
 	if tex_idle and tex_grab:
 		_apply_dual_textures(tex_idle, tex_grab)
 
@@ -81,28 +93,21 @@ func _apply_dual_textures(tex_idle: Texture2D, tex_grab: Texture2D):
 	
 	for anim_name in animation_names:
 		var frame_count = frames.get_frame_count(anim_name)
-		
-		# Decidimos qué textura usar según el nombre de la animación
-		var texture_to_use = tex_grab # Por defecto usamos la sin brazos
+		var texture_to_use = tex_grab 
 		
 		if anim_name == "idle":
-			texture_to_use = tex_idle # Para idle usamos la con brazos (rest)
+			texture_to_use = tex_idle
 		
-		# Aplicamos la textura a todos los frames de esa animación
 		for i in range(frame_count):
 			var frame_texture = frames.get_frame_texture(anim_name, i)
-			
 			if frame_texture is AtlasTexture:
 				frame_texture.atlas = texture_to_use
 				
-	# Refrescar visualmente
 	anim.stop()
 	anim.play("idle")
-	print("Skins aplicadas: Idle(Rest) y Grab(NoClaw)")
+	print("Skins aplicadas correctamente")
 
-# --- FIN NUEVO CÓDIGO ---
-
-# Disparo
+# Mecánica de Disparo
 func shoot_to(target: Vector2, is_recatch := false):
 	if is_stunned or is_shooting:
 		return
@@ -127,12 +132,14 @@ func shoot_to(target: Vector2, is_recatch := false):
 	line.points = [Vector2.ZERO, Vector2.ZERO]
 	tip.position = Vector2.ZERO
 	tip.rotation = 0
+	
 	if tip.sprite_frames.has_animation("open"):
 		tip.play("open")
 
 	var local_target = arm.to_local(target)
 	var t := create_tween()
 
+	# Extender garra
 	t.tween_property(
 		line,
 		"points",
@@ -140,6 +147,7 @@ func shoot_to(target: Vector2, is_recatch := false):
 		duration
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
+	# Agarrar
 	t.tween_interval(0.05)
 	t.tween_callback(func():
 		if tip.sprite_frames.has_animation("close"):
@@ -147,6 +155,7 @@ func shoot_to(target: Vector2, is_recatch := false):
 		emit_signal("claw_reached_target", target)
 	)
 
+	# Retraer garra
 	t.tween_property(
 		line,
 		"points",
@@ -154,13 +163,13 @@ func shoot_to(target: Vector2, is_recatch := false):
 		duration
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
+	# Finalizar
 	t.tween_callback(func():
 		arm.visible = false
 		is_shooting = false
 		anim.play("idle")
 		emit_signal("shot_finished")
 	)
-
 
 # Aturdimiento
 func stun(seconds := 2.0):
@@ -173,18 +182,7 @@ func stun(seconds := 2.0):
 		modulate = Color(1, 1, 1)
 	)
 
-
-# Actualización de brazo
-func _process(_delta):
-	if claw_left_node.visible:
-		claw_left_node.global_position = claw_origin.global_position
-	if claw_left_recap.visible:
-		claw_left_recap.global_position = claw_origin.global_position
-
-	_update_tip(claw_line, claw_tip)
-	_update_tip(claw_line_recap, claw_tip_recap)
-
-
+# Auxiliares
 func _update_tip(line: Line2D, tip: AnimatedSprite2D):
 	if not line or not tip:
 		return

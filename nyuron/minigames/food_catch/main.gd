@@ -1,25 +1,24 @@
 extends Node2D
 
 # UI principal
-@onready var player                 = $Player
-@onready var score_label: Label     = $CanvasLayer/ScoreLabel
-@onready var lives_label: Label     = $CanvasLayer/LivesLabel
+@onready var player = $Player
+@onready var score_label: Label = $CanvasLayer/ScoreLabel
+@onready var lives_label: Label = $CanvasLayer/LivesLabel
 @onready var damage_border: ColorRect = $CanvasLayer/DamageBorder
 @onready var damage_mat: ShaderMaterial = damage_border.material
-@onready var panel: Panel           = $CanvasLayer/GameOverPanel
-@onready var title: Label           = $CanvasLayer/GameOverPanel/Title
-@onready var score_lbl: Label       = $CanvasLayer/GameOverPanel/Score
+@onready var panel: Panel = $CanvasLayer/GameOverPanel
+@onready var title: Label = $CanvasLayer/GameOverPanel/Title
+@onready var score_lbl: Label = $CanvasLayer/GameOverPanel/Score
 @onready var retry_btn: TextureButton = $CanvasLayer/GameOverPanel/Buttons/RetryButton
-@onready var back_btn: TextureButton  = $CanvasLayer/GameOverPanel/Buttons/BackButton
-@onready var difficulty_label: Label  = $CanvasLayer/DifficultyLabel
-@onready var bg: Node2D             = $Background
-@onready var hud: CanvasLayer       = $CanvasLayer
-@onready var backButton: Button     = $CanvasLayer/backButton
+@onready var back_btn: TextureButton = $CanvasLayer/GameOverPanel/Buttons/BackButton
+@onready var difficulty_label: Label = $CanvasLayer/DifficultyLabel
+@onready var bg: Node2D = $Background
+@onready var hud: CanvasLayer = $CanvasLayer
+@onready var backButton: Button = $CanvasLayer/backButton
 
-
-# Sonidos 
-@onready var sfx_eat:   AudioStreamPlayer = $SFX_Eat
-@onready var sfx_bad:   AudioStreamPlayer = $SFX_Bad
+# Sonidos
+@onready var sfx_eat: AudioStreamPlayer = $SFX_Eat
+@onready var sfx_bad: AudioStreamPlayer = $SFX_Bad
 @onready var sfx_bonus: AudioStreamPlayer = $SFX_Bonus
 
 # Intro
@@ -36,7 +35,7 @@ extends Node2D
 @export var spawn_multiplier: float = 0.85
 var difficulty_stage: int = 0
 
-# Partículas
+# Particulas
 @onready var pescao1der: CPUParticles2D = $pescao1der
 @onready var pescao1izq: CPUParticles2D = $pescao1izq
 @onready var pescao2der: CPUParticles2D = $pescao2der
@@ -54,6 +53,9 @@ var difficulty_stage: int = 0
 
 var is_paused := false
 var last_coins_gained: int = 0
+var score: int = 0
+var lives: int = 3
+var screen_size: Vector2 = Vector2.ZERO
 
 # HUD flashes
 func _flash_label(label: Label, flash_color: Color, in_time := 0.06, out_time := 0.22):
@@ -62,13 +64,11 @@ func _flash_label(label: Label, flash_color: Color, in_time := 0.06, out_time :=
 	t.tween_property(label, "modulate", flash_color, in_time)
 	t.tween_property(label, "modulate", base, out_time)
 
-func _hud_damage_flash(): _flash_label(lives_label, Color(1.0, 0.4, 0.4))
-func _hud_pop_flash():    _flash_label(score_label, Color("60e55aff"))
+func _hud_damage_flash(): 
+	_flash_label(lives_label, Color(1.0, 0.4, 0.4))
 
-# Estado de juego
-var score: int = 0
-var lives: int = 3
-var screen_size: Vector2 = Vector2.ZERO
+func _hud_pop_flash():    
+	_flash_label(score_label, Color("60e55aff"))
 
 # Inicialización
 func _ready() -> void:
@@ -112,7 +112,7 @@ func _ready() -> void:
 
 	play_button.pressed.connect(_on_play_pressed)
 
-# Intro / inicio
+# Intro
 func _on_play_pressed() -> void:
 	var t := create_tween()
 	t.tween_property(intro_panel, "modulate:a", 0.0, 0.4)
@@ -125,7 +125,7 @@ func _on_play_pressed() -> void:
 	touch_left.visible = true
 	touch_right.visible = true
 
-# Spawning de ítems
+# Spawning de items
 func _on_spawn_timer_timeout() -> void:
 	var scene: PackedScene
 	var roll := randf()
@@ -161,19 +161,18 @@ func _play_varied(player: AudioStreamPlayer, pmin := 0.95, pmax := 1.05) -> void
 	player.pitch_scale = randf_range(pmin, pmax)
 	player.play()
 
-
-# Resolución de ítems
+# Resolución de items
 func _on_item_resolved(is_trash: bool) -> void:
 	if is_trash:
 		lives -= 1
-		_play_varied(sfx_bad, 0.9, 1.0)          # 🔊 sonido de basura
+		_play_varied(sfx_bad, 0.9, 1.0)
 		_hud_damage_flash()
 		_flash_damage_overlay()
 		if player and player.has_method("play_damage_flash"):
 			player.play_damage_flash()
 	else:
 		score += 10
-		_play_varied(sfx_eat, 1.0, 1.15)         # 🔊 sonido de comer
+		_play_varied(sfx_eat, 1.0, 1.15)
 		_hud_pop_flash()
 		if player and player.has_method("play_catch_pop"):
 			player.play_catch_pop()
@@ -182,22 +181,20 @@ func _on_item_resolved(is_trash: bool) -> void:
 	_update_hud()
 	_check_game_over()
 
-
 func _on_bonus_resolved(points: int) -> void:
 	_hud_pop_flash()
 	score += points
-	_play_varied(sfx_bonus, 1.05, 1.2)          # 🔊 bonus más brillante
+	_play_varied(sfx_bonus, 1.05, 1.2)
 	_spawn_floating_text("+%d" % points, Color(0.414, 0.993, 1.0, 1.0))
 	if player and player.has_method("play_catch_pop"):
 		player.play_catch_pop()
 	_update_hud()
 
-
 func _update_hud() -> void:
 	score_label.text = "Puntos: %d" % score
 	lives_label.text = "Vidas: %d" % lives
 
-# Game over
+# Game Over
 func _check_game_over() -> void:
 	if lives > 0:
 		return
@@ -309,10 +306,10 @@ func pause_game():
 	backButton.visible = true
 	touch_left.visible = false
 	touch_right.visible = false
-	print("🔹 Juego pausado")
+	print("Juego pausado")
 
 func resume_game():
-	print("🔹 Reanudando juego...")
+	print("Reanudando juego...")
 	is_paused = false
 
 	$SpawnTimer.paused = false
@@ -335,7 +332,7 @@ func resume_game():
 	panel.visible = false
 	touch_left.visible = true
 	touch_right.visible = true
-	print("🔹 Juego reanudado")
+	print("Juego reanudado")
 
 # Auxiliares de pausa
 func pause_all_particles(pause: bool):
@@ -360,7 +357,9 @@ func pause_all_particles(pause: bool):
 
 func pause_all_falling_items(pause: bool):
 	for node in get_children():
-		if node is Area2D or node.has_method("_physics_process") or "FallingItem" in node.name or (node.has_method("get_class") and node.get_class() == "FallingItem"):
+		var is_falling_item = "FallingItem" in node.name or (node.has_method("get_class") and node.get_class() == "FallingItem")
+		
+		if node is Area2D or node.has_method("_physics_process") or is_falling_item:
 			if pause:
 				node.process_mode = Node.PROCESS_MODE_DISABLED
 				var anim := node.get_node_or_null("AnimatedSprite2D")

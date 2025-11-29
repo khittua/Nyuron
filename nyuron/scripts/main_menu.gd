@@ -1,6 +1,6 @@
 extends Control
 
-# UI principal
+# UI Principal
 @onready var menu_panel := $CanvasLayer/MenuSlidePanel
 @onready var turtle_button := $CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Turtlerun/TurtleButton
 @onready var worm_button := $CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Worm/WormButton
@@ -11,7 +11,7 @@ extends Control
 @onready var coin_label: Label = $CanvasLayer/CoinDisplay/HBoxContainer/CoinLabel
 @onready var tienda_button := $CanvasLayer/HBoxContainer/Tienda
 
-# Panel de progreso
+# UI Progreso
 @onready var main_ui_buttons := $CanvasLayer/HBoxContainer
 @onready var progress_button := $CanvasLayer/BotonProgreso
 @onready var panel_progreso: Control = $CanvasLayer/PanelProgreso
@@ -19,6 +19,7 @@ extends Control
 @onready var toggle_button := $CanvasLayer/HBoxContainer/Juegos
 @onready var nyuron_visual: AnimatedSprite2D = $NyuronVisual
 
+# Variables de estado
 var current_game: Node = null
 var panel_visible := false
 var menu_color_codes = {
@@ -39,7 +40,7 @@ var menu_accessory_codes = {
 	"Cadena": "_cadena"
 }
 
-# Gaviotas
+# Configuración Gaviotas
 @export var gaviota_scene: PackedScene
 @onready var spawn_timer: Timer = $SpawnTimer
 @export var altura_min := 40.0
@@ -55,6 +56,7 @@ func _ready() -> void:
 
 	load_and_update_coins()
 	update_menu_skin()
+	
 	for node in [
 		$CanvasLayer/HBoxContainer/Juegos,
 		$CanvasLayer/HBoxContainer/Tienda,
@@ -92,7 +94,7 @@ func _ready() -> void:
 
 	dim_overlay.gui_input.connect(_on_dim_overlay_clicked)
 
-# Reemplaza la función update_menu_skin que tenías por esta:
+# Actualizar skin del menú
 func update_menu_skin():
 	var id_cuerpo = ScoreManager.get_equipped_item("caparazon")
 	var id_accesorio = ScoreManager.get_equipped_item("accesorio")
@@ -100,30 +102,25 @@ func update_menu_skin():
 	var color_suffix = menu_color_codes.get(id_cuerpo, "")
 	var acc_suffix = menu_accessory_codes.get(id_accesorio, "")
 	
-	# Ruta donde se encuentran los accesorios
 	var folder_path = "res://Accesorios/global/"
 	var base_filename = "spr_rest" 
 	
 	var final_path = folder_path + base_filename + color_suffix + acc_suffix + ".png"
 	
 	if ResourceLoader.exists(final_path):
-		# 1. Cargamos la imagen completa
 		var new_texture = load(final_path)
-		# 2. Se la pasamos a la función que actualiza la animación
 		_apply_texture_to_menu_anim(new_texture)
 		print("Skin Menú aplicada: ", final_path)
 	else:
 		print("ERROR: No se encontró skin de menú: ", final_path)
 
-# Agrega esta nueva función al final de tu script:
+# Aplicar textura a la animación
 func _apply_texture_to_menu_anim(new_texture: Texture2D):
 	if nyuron_visual == null:
-		print("ERROR CRÍTICO: No encuentro el nodo AnimatedSprite2D en el menú.")
+		print("ERROR: No encuentro el nodo AnimatedSprite2D en el menú.")
 		return
 
 	var frames = nyuron_visual.sprite_frames
-	
-	# CAMBIA ESTO SI TU ANIMACIÓN EN EL MENÚ TIENE OTRO NOMBRE (ej. "idle")
 	var anim_name = "default" 
 	
 	if frames.has_animation(anim_name):
@@ -131,17 +128,15 @@ func _apply_texture_to_menu_anim(new_texture: Texture2D):
 		for i in range(frame_count):
 			var frame_texture = frames.get_frame_texture(anim_name, i)
 			
-			# Si la animación se hizo con spritesheet (lo normal)
 			if frame_texture is AtlasTexture:
 				frame_texture.atlas = new_texture
 	
-		# Reiniciar la animación para que se vean los cambios
 		nyuron_visual.stop()
 		nyuron_visual.play(anim_name)
 	else:
-		print("Error: El AnimatedSprite del menú no tiene la animación '", anim_name, "'")
-		
-# Menú de juegos
+		print("Error: Falta animación '", anim_name, "'")
+
+# Menú lateral
 func _toggle_menu() -> void:
 	menu_panel.visible = not menu_panel.visible
 
@@ -164,7 +159,7 @@ func _toggle_menu() -> void:
 			tween.tween_property(dim_overlay, "color:a", 0.0, 0.25)
 			tween.finished.connect(func(): dim_overlay.visible = false)
 
-# Panel de progreso
+# Lógica Panel Progreso
 func _on_progress_button_pressed():
 	if menu_panel.visible:
 		menu_panel.visible = false
@@ -205,7 +200,7 @@ func _on_progress_hud_play_game(game_key: String):
 		"counting_animals": _on_counting_pressed()
 		"nyuron_color": _on_color_pressed()
 
-# Lanzar minijuegos
+# Lanzadores de minijuegos
 func _on_turtle_pressed():
 	DisplayServer.screen_set_orientation(DisplayServer.SCREEN_LANDSCAPE)
 	get_tree().root.set_content_scale_size(Vector2i(480, 270))
@@ -236,7 +231,7 @@ func _on_color_pressed():
 	get_tree().root.set_content_scale_size(Vector2i(270, 480))
 	get_tree().change_scene_to_file("res://minigames/nyuron_color/scenes/Main.tscn")
 
-# Soporte
+# Funciones auxiliares
 func _spawn_gaviota():
 	if gaviota_scene == null:
 		return

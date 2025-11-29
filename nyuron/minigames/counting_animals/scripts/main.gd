@@ -2,7 +2,7 @@ extends Node2D
 
 signal finished_moving
 
-@onready var spawner = $AnimalSpawner
+# UI Principal
 @onready var instruction_label = $CanvasLayer/instruction_label
 @onready var number_buttons = $CanvasLayer/number_buttons
 @onready var animal_preview = $CanvasLayer/AnimalPreview
@@ -11,6 +11,7 @@ signal finished_moving
 @onready var intro_label = $CanvasLayer/intro_panel/Label
 @onready var play_button = $CanvasLayer/intro_panel/Button
 
+# UI Game Over / Info
 @onready var score_label = $CanvasLayer/score_label
 @onready var panel: Panel = $CanvasLayer/GameOverPanel
 @onready var title: Label = $CanvasLayer/GameOverPanel/Title
@@ -19,7 +20,10 @@ signal finished_moving
 @onready var retry_btn: TextureButton = $CanvasLayer/GameOverPanel/Buttons/RetryButton
 @onready var backButton: Button = $CanvasLayer/backButton
 
-# Variables
+# Lógica
+@onready var spawner = $AnimalSpawner
+
+# Variables de Estado
 var is_paused := false
 var last_coins_gained: int = 0
 var counting = false
@@ -40,6 +44,7 @@ var animal_names := {
 	"tortuguita_estrella": "Tortuguitas Estrella"
 }
 
+# Inicialización
 func _ready():
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
 	$CanvasLayer.process_mode = Node.PROCESS_MODE_ALWAYS
@@ -48,9 +53,6 @@ func _ready():
 	number_buttons.hide()
 	score_label.hide()
 	panel.hide()
-
-	setup_number_buttons()
-	number_buttons.hide()
 
 	if animal_preview and not animal_preview.is_in_group("AnimalPreviewGroup"):
 		animal_preview.add_to_group("AnimalPreviewGroup")
@@ -101,7 +103,7 @@ func pause_game():
 	instruction_label.visible = false
 	intro_panel.visible = false
 
-	print("Juego pausado completamente")
+	print("Juego pausado")
 
 func resume_game():
 	print("Reanudando juego...")
@@ -123,7 +125,7 @@ func resume_game():
 	instruction_label.visible = true
 	intro_panel.visible = true
 
-	print("Juego reanudado completamente")
+	print("Juego reanudado")
 
 func pause_all_animals(pause: bool):
 	var animal_count = 0
@@ -141,9 +143,7 @@ func pause_all_animals(pause: bool):
 					anim.speed_scale = 1.0
 			animal_count += 1
 
-	print("", animal_count, " animales ", "pausados" if pause else "reanudados")
-
-# Inicio de partida
+# Inicio partida
 func _on_play_pressed():
 	intro_panel.hide()
 
@@ -204,7 +204,7 @@ func _on_spawn_finished():
 
 	show_answer_choices()
 
-# Instrucciones e imagenes
+# Visualización
 func show_instruction(animal_type_or_types):
 	instruction_label.text = "Animal/es a contar:"
 	number_buttons.hide()
@@ -286,7 +286,7 @@ func _on_number_pressed(num_str: String):
 	await get_tree().create_timer(2.0).timeout
 	start_round()
 
-# Botones navegación
+# Navegación
 func _on_back_pressed() -> void:
 	get_tree().paused = false
 	is_paused = false
@@ -296,6 +296,7 @@ func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _on_retry_pressed() -> void:
+	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 func _on_backButton_pressed():
@@ -304,7 +305,7 @@ func _on_backButton_pressed():
 	else:
 		resume_game()
 
-# Puntuacion y aumento de dificultad progresiva
+# Puntuación y Dificultad
 func add_score():
 	var points := 0
 	match difficulty_level:
@@ -334,7 +335,7 @@ func show_transition_message(text: String):
 	if instruction_label.text == text:
 		instruction_label.text = ""
 
-# Juego Terminado
+# Fin del Juego
 func show_game_over():
 	spawner.stop_spawning()
 	counting = false
@@ -366,16 +367,17 @@ func show_game_over():
 		if is_instance_valid(node) and node.name == "AnimalPreview" and node != animal_preview:
 			node.queue_free()
 
-# Guardamos el puntaje y la cantidad de monedas ganadas en los archivos del jugador
+	# Guardado de puntaje
 	var final_score = int(score)
 	if final_score > 0:
 		var score_manager = get_node("/root/ScoreManager")
 		if score_manager:
-			score_manager.save_high_score("turtle_runner", final_score)
+			# Se corrigió "turtle_runner" a "counting_animals"
+			score_manager.save_high_score("counting_animals", final_score)
 			var coins_earned = int(final_score * 2.0)
 			if coins_earned > 0 and score_manager:
 				score_manager.add_coins(coins_earned)
-				print("Ganaste:", coins_earned, "monedas")
+				print("Ganaste: ", coins_earned, " monedas")
 				last_coins_gained = coins_earned
 
 	panel.visible = true
