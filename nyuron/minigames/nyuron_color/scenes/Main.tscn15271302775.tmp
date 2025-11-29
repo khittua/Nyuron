@@ -1,0 +1,152 @@
+[gd_scene load_steps=19 format=3 uid="uid://bjyietw2xtbd7"]
+
+[ext_resource type="Script" uid="uid://drj2ctersetnn" path="res://minigames/nyuron_color/scripts/main.gd" id="1_rvslj"]
+[ext_resource type="Texture2D" uid="uid://dcm415w3r2qmu" path="res://minigames/nyuron_color/assets/si.png" id="2_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://b3oqgtvw54orp" path="res://minigames/nyuron_color/scenes/CrabBlue.tscn" id="3_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://bawew8f3x8smd" path="res://minigames/nyuron_color/scenes/CrabGreen.tscn" id="4_c01mt"]
+[ext_resource type="PackedScene" uid="uid://4yhciioyyxdk" path="res://minigames/nyuron_color/scenes/CrabRed.tscn" id="5_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://bplv202agonjq" path="res://minigames/nyuron_color/scenes/CrabYellow.tscn" id="6_jlsqs"]
+[ext_resource type="FontFile" uid="uid://c7j1g5evou5l8" path="res://minigames/food_catch/Aquarius-Bold.ttf" id="7_lndmp"]
+[ext_resource type="Texture2D" uid="uid://pk30154mtfym" path="res://minigames/nyuron_color/assets/volver1.png" id="9_bjd11"]
+[ext_resource type="Texture2D" uid="uid://ck8s6ej8oyrb3" path="res://assets/31716f65-4cd6-47b4-ac76-82dc19d8e671.png" id="10_k0xww"]
+[ext_resource type="Texture2D" uid="uid://b7g4tji6oy15g" path="res://minigames/nyuron_color/assets/volver2.png" id="10_qmy6f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rarhs"]
+atlas = ExtResource("2_0bbpv")
+region = Rect2(0, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcsgt"]
+atlas = ExtResource("2_0bbpv")
+region = Rect2(270, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c01mt"]
+atlas = ExtResource("2_0bbpv")
+region = Rect2(540, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxtc6"]
+atlas = ExtResource("2_0bbpv")
+region = Rect2(810, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlsqs"]
+atlas = ExtResource("2_0bbpv")
+region = Rect2(1080, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8u5g"]
+atlas = ExtResource("2_0bbpv")
+region = Rect2(1350, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhr70"]
+atlas = ExtResource("2_0bbpv")
+region = Rect2(1620, 0, 270, 480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wp0k4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rarhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcsgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c01mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxtc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlsqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8u5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhr70")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_rvslj")
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+position = Vector2(135, 240)
+sprite_frames = SubResource("SpriteFrames_wp0k4")
+autoplay = "default"
+
+[node name="Crabs" type="Node2D" parent="."]
+
+[node name="CrabYellow" parent="Crabs" instance=ExtResource("6_jlsqs")]
+position = Vector2(57, 294)
+
+[node name="CrabGreen" parent="Crabs" instance=ExtResource("4_c01mt")]
+position = Vector2(197, 194)
+
+[node name="CrabBlue" parent="Crabs" instance=ExtResource("3_0bbpv")]
+position = Vector2(52, 189)
+
+[node name="CrabRed" parent="Crabs" instance=ExtResource("5_nxtc6")]
+position = Vector2(196, 294)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 40.0
+offset_right = 80.0
+offset_bottom = 23.0
+
+[node name="InfoLabel" type="Label" parent="CanvasLayer"]
+offset_left = 105.0
+offset_top = 93.0
+offset_right = 145.0
+offset_bottom = 116.0
+
+[node name="GameOverPanel" type="Panel" parent="CanvasLayer"]
+offset_right = 270.0
+offset_bottom = 480.0
+
+[node name="Title" type="Label" parent="CanvasLayer/GameOverPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.0
+offset_top = 101.0
+offset_right = 98.0
+offset_bottom = 184.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.92941177, 0.37254903, 0.27058825, 1)
+theme_override_colors/font_outline_color = Color(0.05882353, 0.16862746, 0.22352941, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("7_lndmp")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="CanvasLayer/GameOverPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer/GameOverPanel"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 283.0
+offset_right = 234.0
+offset_bottom = 323.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="CanvasLayer/GameOverPanel/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("9_bjd11")
+texture_pressed = ExtResource("10_qmy6f")
+
+[node name="backButton" type="Button" parent="CanvasLayer"]
+offset_left = 247.0
+offset_top = 456.0
+offset_right = 270.0
+offset_bottom = 479.0
+theme_type_variation = &"FlatButton"
+icon = ExtResource("10_k0xww")

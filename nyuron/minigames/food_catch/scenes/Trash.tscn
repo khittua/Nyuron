@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://crtc4f3mfnn04"]
+
+[ext_resource type="Script" uid="uid://cyrjl73u5yd5f" path="res://minigames/food_catch/item.gd" id="1_43he1"]
+[ext_resource type="Texture2D" uid="uid://c06tv5yt0eqa0" path="res://minigames/food_catch/assets/bebia.png" id="2_3k6nv"]
+[ext_resource type="Texture2D" uid="uid://bq3hpm1x401bs" path="res://minigames/food_catch/assets/plastico.png" id="3_lngr3"]
+[ext_resource type="Texture2D" uid="uid://xwbymh68o8e1" path="res://minigames/food_catch/assets/spr_shoes.png" id="4_bpasy"]
+[ext_resource type="Texture2D" uid="uid://f8iq8wgumwna" path="res://minigames/food_catch/assets/spr_trash_bag.png" id="5_c0qcs"]
+[ext_resource type="Texture2D" uid="uid://cnufe2j383rwn" path="res://minigames/food_catch/assets/spr_bottle.png" id="6_anj0x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jixxp"]
+radius = 8.0
+height = 21.999985
+
+[node name="Trash" type="Area2D"]
+script = ExtResource("1_43he1")
+textures = Array[Texture2D]([ExtResource("2_3k6nv"), ExtResource("3_lngr3"), ExtResource("4_bpasy"), ExtResource("5_c0qcs"), ExtResource("6_anj0x")])
+is_trash = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.0000076, -19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -18.999992)
+shape = SubResource("CapsuleShape2D_jixxp")

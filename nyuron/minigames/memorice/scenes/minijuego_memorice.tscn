@@ -1,0 +1,368 @@
+[gd_scene load_steps=33 format=3 uid="uid://dcmhjquv3htys"]
+
+[ext_resource type="Script" uid="uid://d0i2t0k02dgea" path="res://minigames/memorice/scripts/memorice.gd" id="1_lp04r"]
+[ext_resource type="Texture2D" uid="uid://c2t3j84axe2yt" path="res://minigames/memorice/assets/spr_background-Sheet.png" id="1_wyb4n"]
+[ext_resource type="PackedScene" uid="uid://brg60trfj8ixx" path="res://minigames/memorice/scenes/almeja_camaron.tscn" id="3_qq7u7"]
+[ext_resource type="PackedScene" uid="uid://cwvn7x2y2isvf" path="res://minigames/memorice/scenes/almeja_zapatilla.tscn" id="4_nqjlq"]
+[ext_resource type="FontFile" uid="uid://chk4hobehunho" path="res://minigames/memorice/Aquarius-Bold.ttf" id="5_a42h2"]
+[ext_resource type="Texture2D" uid="uid://q5p5xi23bjle" path="res://minigames/memorice/assets/reintentar1.png" id="6_f0h0g"]
+[ext_resource type="Texture2D" uid="uid://dum0oploxgfqp" path="res://minigames/memorice/assets/reintentar2.png" id="7_o5iky"]
+[ext_resource type="Texture2D" uid="uid://chk0paoiosajp" path="res://minigames/memorice/assets/volver1.png" id="7_y1qdc"]
+[ext_resource type="Texture2D" uid="uid://ck8s6ej8oyrb3" path="res://assets/31716f65-4cd6-47b4-ac76-82dc19d8e671.png" id="8_e6jwm"]
+[ext_resource type="Texture2D" uid="uid://chu67pyuaeum3" path="res://minigames/memorice/assets/volver2.png" id="8_g48og"]
+[ext_resource type="AudioStream" uid="uid://d3x8apqu3oaxl" path="res://minigames/memorice/audio/ocean-waves-376898.mp3" id="10_srer4"]
+[ext_resource type="AudioStream" uid="uid://cnsavqsjbys2" path="res://minigames/memorice/audio/Correct.mp3" id="11_c3cf4"]
+[ext_resource type="AudioStream" uid="uid://dt5qi0jjvn050" path="res://minigames/memorice/audio/mas_puntos.mp3" id="12_3k1a3"]
+[ext_resource type="AudioStream" uid="uid://fwkjhgppxxjd" path="res://minigames/memorice/audio/Incorrect.mp3" id="12_srer4"]
+[ext_resource type="AudioStream" uid="uid://d4hd7et0ekk0d" path="res://minigames/memorice/audio/pop.mp3" id="13_srer4"]
+[ext_resource type="AudioStream" uid="uid://yhqtxmukjqaa" path="res://minigames/memorice/audio/menos_puntos.mp3" id="14_7sfvu"]
+[ext_resource type="Texture2D" uid="uid://bh8eyu5i3v0iy" path="res://assets/hud.png" id="17_ogx4e"]
+[ext_resource type="FontFile" uid="uid://cvpke7jjme7kf" path="res://minigames/counting_animals/assets/Aquarius-Bold.ttf" id="18_gxw2k"]
+[ext_resource type="Texture2D" uid="uid://c5xc74m8sepsq" path="res://minigames/food_catch/assets/play.png" id="19_3mlgh"]
+[ext_resource type="Texture2D" uid="uid://dctl7jnmxdxqb" path="res://minigames/memorice/assets/intro1.png" id="20_7a2v1"]
+[ext_resource type="Texture2D" uid="uid://be557j124s11u" path="res://minigames/memorice/assets/intro2.png" id="21_ld3r5"]
+[ext_resource type="Texture2D" uid="uid://cu6n4up288yv8" path="res://minigames/memorice/assets/intro3.png" id="22_soyi6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vrkn"]
+atlas = ExtResource("1_wyb4n")
+region = Rect2(0, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu7sn"]
+atlas = ExtResource("1_wyb4n")
+region = Rect2(270, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jix8l"]
+atlas = ExtResource("1_wyb4n")
+region = Rect2(540, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glbon"]
+atlas = ExtResource("1_wyb4n")
+region = Rect2(810, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlkkf"]
+atlas = ExtResource("1_wyb4n")
+region = Rect2(1080, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe12f"]
+atlas = ExtResource("1_wyb4n")
+region = Rect2(1350, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qtwp"]
+atlas = ExtResource("1_wyb4n")
+region = Rect2(1620, 0, 270, 480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dy7ct"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vrkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu7sn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jix8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glbon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlkkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe12f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qtwp")
+}],
+"loop": true,
+"name": &"fondo",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lp04r"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jdioy"]
+texture = ExtResource("17_ogx4e")
+expand_margin_left = 30.0
+expand_margin_top = 30.0
+expand_margin_right = 30.0
+expand_margin_bottom = 30.0
+
+[node name="main" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_lp04r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(135, 240)
+sprite_frames = SubResource("SpriteFrames_dy7ct")
+animation = &"fondo"
+autoplay = "fondo"
+
+[node name="Almejas" type="Node2D" parent="."]
+position = Vector2(-0.024341106, -0.008708)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="almeja_camaron" parent="." instance=ExtResource("3_qq7u7")]
+visible = false
+
+[node name="almeja_zapatilla" parent="." instance=ExtResource("4_nqjlq")]
+visible = false
+
+[node name="almeja_camaron2" parent="." instance=ExtResource("3_qq7u7")]
+visible = false
+
+[node name="almeja_zapatilla2" parent="." instance=ExtResource("4_nqjlq")]
+visible = false
+
+[node name="UI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="PuntosLabel" type="Label" parent="UI"]
+texture_filter = 1
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 151.0
+offset_bottom = 28.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_a42h2")
+text = "Puntos: 100"
+
+[node name="GameOverPanel" type="Panel" parent="UI"]
+visible = false
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lp04r")
+
+[node name="score" type="Label" parent="UI/GameOverPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.49300003
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -56.140015
+offset_right = 0.5
+offset_bottom = -34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7411765, 0.2784314, 0.19215687, 1)
+theme_override_colors/font_outline_color = Color(0.05882353, 0.16862746, 0.22352941, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_a42h2")
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="CoinsEarned" type="Label" parent="UI/GameOverPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.49300003
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -31.140015
+offset_right = 0.5
+offset_bottom = -9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7411765, 0.2784314, 0.19215687, 1)
+theme_override_colors/font_outline_color = Color(0.05882353, 0.16862746, 0.22352941, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("5_a42h2")
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="UI/GameOverPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.0
+offset_top = 66.0
+offset_right = 98.0
+offset_bottom = 149.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.7411765, 0.2784314, 0.19215687, 1)
+theme_override_colors/font_outline_color = Color(0.05882353, 0.16862746, 0.22352941, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("5_a42h2")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="UI/GameOverPanel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = 71.0
+offset_right = 43.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 26
+
+[node name="RetryButton" type="TextureButton" parent="UI/GameOverPanel/Buttons"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("6_f0h0g")
+texture_pressed = ExtResource("7_o5iky")
+
+[node name="BackButton" type="TextureButton" parent="UI/GameOverPanel/Buttons"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("7_y1qdc")
+texture_pressed = ExtResource("8_g48og")
+
+[node name="backButton" type="Button" parent="UI"]
+offset_left = 247.0
+offset_top = 456.0
+offset_right = 270.0
+offset_bottom = 479.0
+theme_type_variation = &"FlatButton"
+icon = ExtResource("8_e6jwm")
+
+[node name="MusicaFondo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_srer4")
+volume_db = -10.187
+autoplay = true
+parameters/looping = true
+
+[node name="SFX_Acierto" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_c3cf4")
+
+[node name="SFX_mas_puntos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_3k1a3")
+
+[node name="SFX_Error" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_srer4")
+
+[node name="SFX_menos_puntos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_7sfvu")
+
+[node name="SFX_AbrirAlmeja" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_srer4")
+
+[node name="intro_panel" type="Panel" parent="."]
+z_index = 200
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = 110.0
+offset_right = 256.0
+offset_bottom = 401.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jdioy")
+
+[node name="Label" type="Label" parent="intro_panel"]
+z_index = 10
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = 84.0
+offset_right = 224.0
+offset_bottom = 133.0
+theme_override_colors/font_color = Color(0.37254903, 0.29411766, 0.15294118, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("18_gxw2k")
+theme_override_font_sizes/font_size = 8
+text = "Encuentra los pares iguales antes sin perder tus puntos. ¡Concéntrate y recuerda bien!"
+horizontal_alignment = 1
+autowrap_mode = 3
+justification_flags = 0
+
+[node name="Titulo" type="Label" parent="intro_panel"]
+z_index = 10
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 35.0
+offset_right = 239.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0.37254903, 0.29411766, 0.15294118, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("18_gxw2k")
+theme_override_font_sizes/font_size = 11
+text = "¿Dónde estaba esa carta?"
+horizontal_alignment = 1
+autowrap_mode = 3
+justification_flags = 0
+
+[node name="Button" type="Button" parent="intro_panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = 62.0
+offset_right = 16.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("18_gxw2k")
+theme_override_font_sizes/font_size = 8
+icon = ExtResource("19_3mlgh")
+flat = true
+autowrap_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="intro_panel"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 145.00002
+offset_right = 67.0
+offset_bottom = 185.00002
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_7a2v1")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="intro_panel"]
+layout_mode = 0
+offset_left = 92.000015
+offset_top = 145.0
+offset_right = 132.00003
+offset_bottom = 185.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("21_ld3r5")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="intro_panel"]
+layout_mode = 0
+offset_left = 158.00003
+offset_top = 145.00002
+offset_right = 198.00002
+offset_bottom = 185.00002
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("22_soyi6")
+expand_mode = 1

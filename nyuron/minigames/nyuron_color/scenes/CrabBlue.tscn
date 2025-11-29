@@ -1,0 +1,92 @@
+[gd_scene load_steps=15 format=3 uid="uid://b3oqgtvw54orp"]
+
+[ext_resource type="PackedScene" uid="uid://cs3y4up8iw8s3" path="res://minigames/nyuron_color/scenes/Crab.tscn" id="1_xdbk3"]
+[ext_resource type="Texture2D" uid="uid://dm6fhc1hif0qj" path="res://minigames/nyuron_color/assets/NyuronAzulHablando.png" id="2_bx3h0"]
+[ext_resource type="Texture2D" uid="uid://dqjkwup74hmkw" path="res://minigames/nyuron_color/assets/NyuronAzul.png" id="2_tjtbi"]
+[ext_resource type="AudioStream" uid="uid://c57j8bkxy7e5l" path="res://minigames/nyuron_color/assets/do.wav" id="4_ks6vt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjtbi"]
+atlas = ExtResource("2_tjtbi")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx3h0"]
+atlas = ExtResource("2_tjtbi")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm5x6"]
+atlas = ExtResource("2_tjtbi")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xljl"]
+atlas = ExtResource("2_tjtbi")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8gt6"]
+atlas = ExtResource("2_bx3h0")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35fek"]
+atlas = ExtResource("2_bx3h0")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fisfb"]
+atlas = ExtResource("2_bx3h0")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ifuv"]
+atlas = ExtResource("2_bx3h0")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_35fek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjtbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx3h0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm5x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xljl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8gt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35fek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fisfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ifuv")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8gt6"]
+size = Vector2(78, 73.5)
+
+[node name="CrabBlue" instance=ExtResource("1_xdbk3")]
+color_name = "blue"
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_35fek")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_i8gt6")
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("4_ks6vt")

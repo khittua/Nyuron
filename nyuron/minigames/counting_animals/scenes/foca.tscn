@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://dculllmbiq373"]
+
+[ext_resource type="Script" uid="uid://boithjnmkqjyj" path="res://minigames/counting_animals/scripts/Animal.gd" id="1_s6ktn"]
+[ext_resource type="Texture2D" uid="uid://dnuf101vergeo" path="res://minigames/counting_animals/assets/foca-sheet.png" id="2_s6ktn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6ktn"]
+atlas = ExtResource("2_s6ktn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84i38"]
+atlas = ExtResource("2_s6ktn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f4b7"]
+atlas = ExtResource("2_s6ktn")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsd0f"]
+atlas = ExtResource("2_s6ktn")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fphqy"]
+atlas = ExtResource("2_s6ktn")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdcoi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6ktn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84i38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f4b7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsd0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fphqy")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 10.0
+}]
+
+[node name="foca" type="Node2D"]
+script = ExtResource("1_s6ktn")
+type_id = "foca"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_kdcoi")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.354868

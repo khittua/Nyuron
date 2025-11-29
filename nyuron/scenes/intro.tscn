@@ -1,0 +1,229 @@
+[gd_scene load_steps=14 format=3 uid="uid://c2i7mnv4jvgc1"]
+
+[ext_resource type="Script" uid="uid://bx0v8hk1mdhnf" path="res://intro.gd" id="1_wfs7u"]
+[ext_resource type="Texture2D" uid="uid://bkm1badid38m2" path="res://assets/background.png" id="2_es01l"]
+[ext_resource type="Texture2D" uid="uid://comp5y01p085" path="res://assets/spr_rest-export.png" id="3_0naf5"]
+[ext_resource type="FontFile" uid="uid://cbwtyppa06iqu" path="res://assets/Aquarius-Bold.ttf" id="4_bu1yb"]
+[ext_resource type="Script" uid="uid://cp7lo42c1y8lx" path="res://texto.gd" id="5_t1qkj"]
+
+[sub_resource type="Gradient" id="Gradient_u2rf6"]
+offsets = PackedFloat32Array(0.033333335, 0.62666667)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.7254902)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y6ycx"]
+gradient = SubResource("Gradient_u2rf6")
+height = 73
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpxxx"]
+atlas = ExtResource("3_0naf5")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk2oa"]
+atlas = ExtResource("3_0naf5")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ufi4"]
+atlas = ExtResource("3_0naf5")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0kys"]
+atlas = ExtResource("3_0naf5")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0rr7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpxxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk2oa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ufi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0kys")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="Theme" id="Theme_y72e6"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wfs7u")
+metadata/_edit_lock_ = true
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(135, 240)
+texture = ExtResource("2_es01l")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 243.52893
+offset_right = 506.47107
+offset_bottom = 513.52893
+rotation = 1.5707964
+texture = SubResource("GradientTexture2D_y6ycx")
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(214, 308)
+sprite_frames = SubResource("SpriteFrames_d0rr7")
+autoplay = "default"
+frame_progress = 0.9876081
+metadata/_edit_lock_ = true
+
+[node name="Panel1" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 341.0
+offset_right = 270.0
+offset_bottom = 480.0
+theme_override_constants/separation = 10
+metadata/_edit_lock_ = true
+
+[node name="NombreNyuron" type="Label" parent="Panel1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.35184675, 0.33448517, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.59607846)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_bu1yb")
+theme_override_font_sizes/font_size = 9
+text = "Nyuron"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Panel1"]
+custom_minimum_size = Vector2(241, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.89492244, 0.89492244, 0.8949224, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.59607846)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_bu1yb")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("5_t1qkj")
+full_text = "¡Hola! Soy Nyuron, tu amigo cangrejo explorador! "
+
+[node name="Button" type="Button" parent="Panel1"]
+visible = false
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_bu1yb")
+theme_override_font_sizes/font_size = 8
+text = "Continuar"
+icon_alignment = 1
+
+[node name="Panel2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 341.0
+offset_right = 270.0
+offset_bottom = 418.0
+theme_override_constants/separation = 10
+
+[node name="NombreNyuron" type="Label" parent="Panel2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.35184675, 0.33448517, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.59607846)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_bu1yb")
+theme_override_font_sizes/font_size = 9
+text = "Nyuron"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Panel2"]
+custom_minimum_size = Vector2(241, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.59607846)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_bu1yb")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+autowrap_mode = 3
+script = ExtResource("5_t1qkj")
+
+[node name="LineEdit" type="LineEdit" parent="Panel2"]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_bu1yb")
+theme_override_font_sizes/font_size = 8
+caret_blink = true
+
+[node name="Button" type="Button" parent="Panel2"]
+visible = false
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_y72e6")
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = ExtResource("4_bu1yb")
+theme_override_font_sizes/font_size = 8
+text = "Continuar"
+icon_alignment = 1
+
+[node name="Panel3" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 341.0
+offset_right = 270.0
+offset_bottom = 418.0
+theme_override_constants/separation = 10
+
+[node name="NombreNyuron" type="Label" parent="Panel3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.35184675, 0.33448517, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.59607846)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_bu1yb")
+theme_override_font_sizes/font_size = 9
+text = "Nyuron"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Panel3"]
+custom_minimum_size = Vector2(235, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.89492244, 0.89492244, 0.8949224, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.59607846)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_bu1yb")
+theme_override_font_sizes/font_size = 8
+text = "\"¡Un gusto conocerte, {NOMBRE}!\"
+Te acompañaré a explorar el océano, jugar, aprender
+y entrenar tu mente con minijuegos divertidos."
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("5_t1qkj")
+full_text = "¡Un gusto conocerte, {NOMBRE}!\"Te acompañaré a explorar el océano, jugar, aprender y entrenar tu mente con minijuegos divertidos."
+
+[node name="Button" type="Button" parent="Panel3"]
+visible = false
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_y72e6")
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = ExtResource("4_bu1yb")
+theme_override_font_sizes/font_size = 8
+text = "¡Comenzar!"
+icon_alignment = 1

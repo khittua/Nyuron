@@ -1,0 +1,78 @@
+[gd_scene load_steps=13 format=3 uid="uid://4yhciioyyxdk"]
+
+[ext_resource type="PackedScene" uid="uid://cs3y4up8iw8s3" path="res://minigames/nyuron_color/scenes/Crab.tscn" id="1_qcys3"]
+[ext_resource type="Texture2D" uid="uid://b6dt4usf1mt8a" path="res://minigames/nyuron_color/assets/NyuronRojoHablando.png" id="2_3na4k"]
+[ext_resource type="Texture2D" uid="uid://cq3xqrv7pxx78" path="res://minigames/nyuron_color/assets/NyuronRojo.png" id="2_hf4lt"]
+[ext_resource type="AudioStream" uid="uid://cnf1dhkvdc562" path="res://minigames/nyuron_color/assets/fa (mp3cut.net).wav" id="4_klxd8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hf4lt"]
+atlas = ExtResource("2_hf4lt")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3na4k"]
+atlas = ExtResource("2_hf4lt")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4nvq"]
+atlas = ExtResource("2_hf4lt")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlig4"]
+atlas = ExtResource("2_hf4lt")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky5cp"]
+atlas = ExtResource("2_3na4k")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iful2"]
+atlas = ExtResource("2_3na4k")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ky5cp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hf4lt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3na4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4nvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlig4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky5cp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iful2")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hf4lt"]
+size = Vector2(78, 73.5)
+
+[node name="CrabRed" instance=ExtResource("1_qcys3")]
+color_name = "red"
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ky5cp")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_hf4lt")
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("4_klxd8")

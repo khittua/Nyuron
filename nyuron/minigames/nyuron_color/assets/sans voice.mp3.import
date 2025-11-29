@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1bmkxk3hs4ll"
+path="res://.godot/imported/sans voice.mp3-1f8af77dac68f6e0ab7cd98f2b8f027b.mp3str"
+
+[deps]
+
+source_file="res://minigames/nyuron_color/assets/sans voice.mp3"
+dest_files=["res://.godot/imported/sans voice.mp3-1f8af77dac68f6e0ab7cd98f2b8f027b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,309 @@
+[gd_scene load_steps=27 format=3 uid="uid://bjyietw2xtbd7"]
+
+[ext_resource type="Script" uid="uid://drj2ctersetnn" path="res://minigames/nyuron_color/scripts/main.gd" id="1_rvslj"]
+[ext_resource type="Texture2D" uid="uid://dcm415w3r2qmu" path="res://minigames/nyuron_color/assets/si.png" id="2_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://b3oqgtvw54orp" path="res://minigames/nyuron_color/scenes/CrabBlue.tscn" id="3_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://bawew8f3x8smd" path="res://minigames/nyuron_color/scenes/CrabGreen.tscn" id="4_c01mt"]
+[ext_resource type="PackedScene" uid="uid://4yhciioyyxdk" path="res://minigames/nyuron_color/scenes/CrabRed.tscn" id="5_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://bplv202agonjq" path="res://minigames/nyuron_color/scenes/CrabYellow.tscn" id="6_jlsqs"]
+[ext_resource type="FontFile" uid="uid://c7j1g5evou5l8" path="res://minigames/food_catch/Aquarius-Bold.ttf" id="7_lndmp"]
+[ext_resource type="Texture2D" uid="uid://b5qsx5fgshgg6" path="res://minigames/nyuron_color/assets/reintentar1.png" id="8_a6mih"]
+[ext_resource type="Texture2D" uid="uid://pk30154mtfym" path="res://minigames/nyuron_color/assets/volver1.png" id="9_bjd11"]
+[ext_resource type="Texture2D" uid="uid://cx1yf1wybso1x" path="res://minigames/nyuron_color/assets/reintentar2.png" id="9_r4kph"]
+[ext_resource type="Texture2D" uid="uid://ck8s6ej8oyrb3" path="res://assets/31716f65-4cd6-47b4-ac76-82dc19d8e671.png" id="10_k0xww"]
+[ext_resource type="Texture2D" uid="uid://b7g4tji6oy15g" path="res://minigames/nyuron_color/assets/volver2.png" id="10_qmy6f"]
+[ext_resource type="Texture2D" uid="uid://bh8eyu5i3v0iy" path="res://assets/hud.png" id="13_aql1t"]
+[ext_resource type="FontFile" uid="uid://cvpke7jjme7kf" path="res://minigames/counting_animals/assets/Aquarius-Bold.ttf" id="14_vos6p"]
+[ext_resource type="Texture2D" uid="uid://c5xc74m8sepsq" path="res://minigames/food_catch/assets/play.png" id="15_g67vj"]
+[ext_resource type="Texture2D" uid="uid://cuhyasckrqc1a" path="res://minigames/nyuron_color/assets/intro1.png" id="16_of1ln"]
+[ext_resource type="Texture2D" uid="uid://dm6xsdb1jv8o7" path="res://minigames/nyuron_color/assets/intro2.png" id="17_anbvg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rarhs"]
+atlas = ExtResource("2_0bbpv")
+region = Rect2(0, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcsgt"]
+atlas = ExtResource("2_0bbpv")
+region = Rect2(270, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c01mt"]
+atlas = ExtResource("2_0bbpv")
+region = Rect2(540, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxtc6"]
+atlas = ExtResource("2_0bbpv")
+region = Rect2(810, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlsqs"]
+atlas = ExtResource("2_0bbpv")
+region = Rect2(1080, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8u5g"]
+atlas = ExtResource("2_0bbpv")
+region = Rect2(1350, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhr70"]
+atlas = ExtResource("2_0bbpv")
+region = Rect2(1620, 0, 270, 480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wp0k4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rarhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcsgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c01mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxtc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlsqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8u5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhr70")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kqs5m"]
+texture = ExtResource("13_aql1t")
+expand_margin_left = 30.0
+expand_margin_top = 30.0
+expand_margin_right = 30.0
+expand_margin_bottom = 30.0
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_rvslj")
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+position = Vector2(135, 240)
+sprite_frames = SubResource("SpriteFrames_wp0k4")
+autoplay = "default"
+
+[node name="Crabs" type="Node2D" parent="."]
+
+[node name="CrabYellow" parent="Crabs" instance=ExtResource("6_jlsqs")]
+position = Vector2(57, 294)
+
+[node name="CrabGreen" parent="Crabs" instance=ExtResource("4_c01mt")]
+position = Vector2(204, 191)
+
+[node name="CrabBlue" parent="Crabs" instance=ExtResource("3_0bbpv")]
+position = Vector2(59, 191)
+
+[node name="CrabRed" parent="Crabs" instance=ExtResource("5_nxtc6")]
+position = Vector2(203, 294)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 74.0
+offset_top = 3.0
+offset_right = 114.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.7411765, 0.2784314, 0.19215687, 1)
+theme_override_fonts/font = ExtResource("7_lndmp")
+
+[node name="InfoLabel" type="Label" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = 87.0
+offset_right = 268.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(0.7411765, 0.2784314, 0.19215687, 1)
+theme_override_fonts/font = ExtResource("7_lndmp")
+theme_override_font_sizes/font_size = 13
+horizontal_alignment = 1
+
+[node name="GameOverPanel" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_top = -1.0
+offset_right = 270.0
+offset_bottom = 479.0
+
+[node name="Title" type="Label" parent="CanvasLayer/GameOverPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.0
+offset_top = 101.0
+offset_right = 98.0
+offset_bottom = 184.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.92941177, 0.37254903, 0.27058825, 1)
+theme_override_colors/font_outline_color = Color(0.05882353, 0.16862746, 0.22352941, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("7_lndmp")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="CanvasLayer/GameOverPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -101.5
+offset_right = 43.5
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7411765, 0.2784314, 0.19215687, 1)
+theme_override_colors/font_outline_color = Color(0.05882353, 0.16862746, 0.22352941, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("7_lndmp")
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="CoinsEarned" type="Label" parent="CanvasLayer/GameOverPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -76.5
+offset_right = 43.5
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7411765, 0.2784314, 0.19215687, 1)
+theme_override_colors/font_outline_color = Color(0.05882353, 0.16862746, 0.22352941, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("7_lndmp")
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer/GameOverPanel"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 283.0
+offset_right = 234.0
+offset_bottom = 323.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="RetryButton" type="TextureButton" parent="CanvasLayer/GameOverPanel/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("8_a6mih")
+texture_pressed = ExtResource("9_r4kph")
+
+[node name="BackButton" type="TextureButton" parent="CanvasLayer/GameOverPanel/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("9_bjd11")
+texture_pressed = ExtResource("10_qmy6f")
+
+[node name="backButton" type="Button" parent="CanvasLayer"]
+offset_left = 247.0
+offset_top = 456.0
+offset_right = 270.0
+offset_bottom = 479.0
+theme_type_variation = &"FlatButton"
+icon = ExtResource("10_k0xww")
+
+[node name="intro_panel" type="Panel" parent="."]
+z_index = 200
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = 110.0
+offset_right = 256.0
+offset_bottom = 401.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kqs5m")
+
+[node name="Label" type="Label" parent="intro_panel"]
+z_index = 10
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 28.0
+offset_top = 77.0
+offset_right = 223.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(0.37254903, 0.29411766, 0.15294118, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("14_vos6p")
+theme_override_font_sizes/font_size = 8
+text = "Ellos harán sonidos en un orden especial…
+¡Recuerda la secuencia y repítela tocándolos!"
+horizontal_alignment = 1
+autowrap_mode = 3
+justification_flags = 0
+
+[node name="Titulo" type="Label" parent="intro_panel"]
+z_index = 10
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 35.0
+offset_top = 34.0
+offset_right = 207.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.37254903, 0.29411766, 0.15294118, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("14_vos6p")
+theme_override_font_sizes/font_size = 11
+text = "¡Memoriza, Repite y Gana!"
+horizontal_alignment = 1
+autowrap_mode = 3
+justification_flags = 0
+
+[node name="Button" type="Button" parent="intro_panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = 62.0
+offset_right = 18.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_vos6p")
+theme_override_font_sizes/font_size = 8
+icon = ExtResource("15_g67vj")
+flat = true
+autowrap_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="intro_panel"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 142.0
+offset_right = 67.0
+offset_bottom = 182.0
+scale = Vector2(2, 2)
+texture = ExtResource("16_of1ln")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="intro_panel"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 142.0
+offset_right = 180.0
+offset_bottom = 182.0
+scale = Vector2(2, 2)
+texture = ExtResource("17_anbvg")
+expand_mode = 1

@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid="uid://7q1r7r4yp7fa"]
+
+[ext_resource type="Script" uid="uid://cgin2ij1kkdjm" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 6
+
+[node name="MenuContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = -85.5
+offset_right = 80.5
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TurtleButton" type="Button" parent="MenuContainer"]
+layout_mode = 2
+text = "Carrera de tortugas
+"
+
+[node name="WormButton" type="Button" parent="MenuContainer"]
+layout_mode = 2
+text = "Caza de gusanos"
+
+[node name="FoodButton" type="Button" parent="MenuContainer"]
+layout_mode = 2
+text = "Comida"
+metadata/_edit_use_anchors_ = true
+
+[node name="MemoriceButton" type="Button" parent="MenuContainer"]
+layout_mode = 2
+text = "Memorice
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="CountingButton" type="Button" parent="MenuContainer"]
+layout_mode = 2
+text = "Conteo de animales
+"
+
+[node name="GameHostContainer" type="CenterContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GameView" type="SubViewportContainer" parent="GameHostContainer"]
+layout_mode = 2
+mouse_filter = 2
+stretch = true
+
+[node name="GamePort" type="SubViewport" parent="GameHostContainer/GameView"]
+handle_input_locally = false
+physics_object_picking = true
+size = Vector2i(2, 2)
+render_target_update_mode = 0

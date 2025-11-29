@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cq0ek84y6y12h"
+path="res://.godot/imported/Canción sin título.mp3-4262ab47111df44d4e4d73d4dc16b5f4.mp3str"
+
+[deps]
+
+source_file="res://minigames/memorice/audio/Canción sin título.mp3"
+dest_files=["res://.godot/imported/Canción sin título.mp3-4262ab47111df44d4e4d73d4dc16b5f4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

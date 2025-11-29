@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://bplv202agonjq"]
+
+[ext_resource type="PackedScene" uid="uid://cs3y4up8iw8s3" path="res://minigames/nyuron_color/scenes/Crab.tscn" id="1_6spaq"]
+[ext_resource type="Texture2D" uid="uid://ds2fu3xkolr32" path="res://minigames/nyuron_color/assets/NyuronAmarillo.png" id="2_lt4dk"]
+[ext_resource type="Texture2D" uid="uid://7wo7c57jdmdk" path="res://minigames/nyuron_color/assets/NyuronAmarilloHablando.png" id="2_pa3on"]
+[ext_resource type="AudioStream" uid="uid://b8vef4h7j1y5q" path="res://minigames/nyuron_color/assets/ti.wav" id="4_crlrp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yedok"]
+atlas = ExtResource("2_lt4dk")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crlrp"]
+atlas = ExtResource("2_lt4dk")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7ssg"]
+atlas = ExtResource("2_lt4dk")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yidnk"]
+atlas = ExtResource("2_lt4dk")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yo0k"]
+atlas = ExtResource("2_pa3on")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd07p"]
+atlas = ExtResource("2_pa3on")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3oi8n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yedok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crlrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7ssg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yidnk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yo0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd07p")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[node name="CrabYellow" instance=ExtResource("1_6spaq")]
+color_name = "yellow"
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_3oi8n")
+animation = &"talk"
+autoplay = "idle"
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.875, -0.875)
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("4_crlrp")

@@ -1,0 +1,1217 @@
+[gd_scene load_steps=55 format=3 uid="uid://7q1r7r4yp7fa"]
+
+[ext_resource type="Script" uid="uid://cgin2ij1kkdjm" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://bkm1badid38m2" path="res://assets/background.png" id="2_8ln24"]
+[ext_resource type="PackedScene" uid="uid://cthqi1b5kfiad" path="res://scenes/gaviotas.tscn" id="2_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://cvdiar18bynq0" path="res://assets/juegos.png" id="4_oa1go"]
+[ext_resource type="Texture2D" uid="uid://b3s70vxngxcic" path="res://assets/iglu.png" id="4_tbmy8"]
+[ext_resource type="FontFile" uid="uid://cbwtyppa06iqu" path="res://assets/Aquarius-Bold.ttf" id="5_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://bj16vejhcurdu" path="res://assets/tienda.png" id="5_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://bjg3bh8246ncs" path="res://assets/gaviota quieta.png" id="7_oa1go"]
+[ext_resource type="FontFile" uid="uid://ddrvppsfca2cx" path="res://assets/tiny.ttf" id="8_j7ex8"]
+[ext_resource type="Script" uid="uid://cen0gui2jdweu" path="res://scripts/hud_progreso.gd" id="9_flqon"]
+[ext_resource type="Texture2D" uid="uid://bh8eyu5i3v0iy" path="res://assets/hud.png" id="9_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://8bgbd6y74epc" path="res://assets/1763082194068.png" id="11_1ajci"]
+[ext_resource type="Texture2D" uid="uid://dwq7nxwr4ochm" path="res://assets/Sprite-0001.png" id="11_gw5y6"]
+[ext_resource type="Texture2D" uid="uid://1tr1ov0uxlyo" path="res://assets/gold.png" id="11_rcqid"]
+[ext_resource type="Texture2D" uid="uid://rf7kf8uwa1lv" path="res://assets/Worm_bucket_icon.png" id="12_j7ex8"]
+[ext_resource type="Texture2D" uid="uid://chw2fgk0eajl6" path="res://assets/food_icon.png" id="13_hstxw"]
+[ext_resource type="Texture2D" uid="uid://cou60gohb1hp3" path="res://assets/Shell-icon.png" id="14_8egab"]
+[ext_resource type="Texture2D" uid="uid://xuodkk0qcl2k" path="res://assets/counting_icon.png" id="15_gw5y6"]
+[ext_resource type="Texture2D" uid="uid://db2el7oqimsd5" path="res://assets/color2_icon.png" id="17_gw5y6"]
+[ext_resource type="Texture2D" uid="uid://cpkbqlsvqau0o" path="res://assets/Coins.png" id="20_svtp6"]
+[ext_resource type="AudioStream" uid="uid://bmfgvh7pgsiup" path="res://assets/inicio.wav" id="22_1dfpl"]
+[ext_resource type="Texture2D" uid="uid://chra6f4s88e2q" path="res://Accesorios/global/spr_rest.png" id="22_svtp6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcqid"]
+bg_color = Color(0.96862745, 0.89411765, 0.7607843, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5529412, 0.38431373, 0.22745098, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gw5y6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ajci"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7b55j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5pajh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7ex8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8gd2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hstxw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8egab"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dfpl"]
+bg_color = Color(0.5764706, 0.5764706, 0.5764706, 0.7372549)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbmy8"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(0, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk1qb"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(14, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dd4i"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(28, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgwnu"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(42, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flqon"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(56, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcqid"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(70, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ajci"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(84, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b55j"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(98, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pajh"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(112, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7ex8"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(126, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8gd2"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(140, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hstxw"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(154, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8egab"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(168, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw5y6"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(182, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svtp6"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(196, 0, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dfpl"]
+atlas = ExtResource("7_oa1go")
+region = Rect2(210, 0, 14, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qywvv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbmy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk1qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dd4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgwnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flqon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcqid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ajci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b55j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pajh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7ex8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8gd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hstxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8egab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw5y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svtp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dfpl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qywvv"]
+atlas = ExtResource("22_svtp6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wgol"]
+atlas = ExtResource("22_svtp6")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1acrt"]
+atlas = ExtResource("22_svtp6")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr8o3"]
+atlas = ExtResource("22_svtp6")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1a85y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qywvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wgol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1acrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr8o3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+gaviota_scene = ExtResource("2_rtw2f")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8ln24")
+stretch_mode = 6
+
+[node name="iglu" type="Sprite2D" parent="Background"]
+z_index = 15
+texture_filter = 1
+position = Vector2(119, 238)
+texture = ExtResource("4_tbmy8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 152.0
+offset_right = 81.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+
+[node name="Juegos" type="TextureButton" parent="CanvasLayer/HBoxContainer" groups=["ui"]]
+layout_mode = 2
+texture_normal = ExtResource("4_oa1go")
+
+[node name="Tienda" type="TextureButton" parent="CanvasLayer/HBoxContainer" groups=["ui"]]
+layout_mode = 2
+texture_normal = ExtResource("5_tbmy8")
+
+[node name="BotonProgreso" type="TextureButton" parent="CanvasLayer"]
+offset_left = 237.0
+offset_top = 14.0
+offset_right = 253.0
+offset_bottom = 30.0
+scale = Vector2(1.45, 1.45)
+texture_normal = ExtResource("11_rcqid")
+
+[node name="FondoOscuro" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="MenuSlidePanel" type="Control" parent="CanvasLayer"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MenuSlidePanel"]
+position = Vector2(137, 246.00002)
+scale = Vector2(0.984, 0.626)
+texture = ExtResource("9_lgwnu")
+
+[node name="LabelJuegos" type="Label" parent="CanvasLayer/MenuSlidePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 119.0
+offset_top = 106.0
+offset_right = 159.00002
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.34117648, 0.21568628, 0, 0.5372549)
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 11
+text = "Juegos"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TarjetaGeneral" type="Panel" parent="CanvasLayer/MenuSlidePanel"]
+custom_minimum_size = Vector2(152.86, 37.36)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 167.0
+offset_right = 228.0
+offset_bottom = 309.0
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rcqid")
+
+[node name="HBox_Main" type="GridContainer" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 173.0
+offset_bottom = 130.0
+columns = 3
+
+[node name="Card_Turtlerun" type="Panel" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main"]
+custom_minimum_size = Vector2(40, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gw5y6")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Turtlerun"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = -3.999999
+offset_top = -6.999999
+offset_right = 60.0
+offset_bottom = 57.0
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("11_gw5y6")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Turtlerun"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 31.0
+offset_right = 37.0
+offset_bottom = 46.0
+
+[node name="LabelNombre" type="Label" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Turtlerun/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.46666667, 0.36862746, 0.2, 1)
+theme_override_fonts/font = ExtResource("8_j7ex8")
+theme_override_font_sizes/font_size = 6
+text = "Carrera de tortugas"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TurtleButton" type="Button" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Turtlerun"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -6.0
+offset_right = 37.0
+offset_bottom = 48.0
+size_flags_horizontal = 10
+theme_override_constants/h_separation = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ajci")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5pajh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a8gd2")
+autowrap_mode = 2
+
+[node name="Card_Worm" type="Panel" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main"]
+custom_minimum_size = Vector2(40, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gw5y6")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Worm"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 5.0
+offset_top = -10.999999
+offset_right = 69.0
+offset_bottom = 53.0
+scale = Vector2(0.655, 0.655)
+texture = ExtResource("12_j7ex8")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Worm"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 31.0
+offset_right = 42.0
+offset_bottom = 48.0
+
+[node name="LabelNombre" type="Label" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Worm/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.46666667, 0.36862746, 0.2, 1)
+theme_override_fonts/font = ExtResource("8_j7ex8")
+theme_override_font_sizes/font_size = 6
+text = "Atrapa gusanos"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="WormButton" type="Button" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Worm"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -9.0
+offset_right = 41.0
+offset_bottom = 48.0
+size_flags_horizontal = 10
+theme_override_constants/h_separation = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ajci")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5pajh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a8gd2")
+autowrap_mode = 2
+
+[node name="Card_Food" type="Panel" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main"]
+custom_minimum_size = Vector2(40, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gw5y6")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Food"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 19.0
+offset_top = -14.999996
+offset_right = 84.11627
+offset_bottom = 58.100773
+scale = Vector2(0.645, 0.645)
+texture = ExtResource("13_hstxw")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Food"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 31.0
+offset_right = 60.0
+offset_bottom = 49.0
+
+[node name="LabelNombre" type="Label" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Food/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.46666667, 0.36862746, 0.2, 1)
+theme_override_fonts/font = ExtResource("8_j7ex8")
+theme_override_font_sizes/font_size = 6
+text = "Lluvia de Snacks"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="FoodButton" type="Button" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Food"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = -11.0
+offset_right = 58.0
+offset_bottom = 46.0
+size_flags_horizontal = 10
+theme_override_constants/h_separation = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ajci")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5pajh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a8gd2")
+autowrap_mode = 2
+
+[node name="Card_Memorice" type="Panel" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main"]
+custom_minimum_size = Vector2(40, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gw5y6")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Memorice"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = -3.0
+offset_top = 9.0
+offset_right = 61.0
+offset_bottom = 73.0
+scale = Vector2(0.535, 0.535)
+texture = ExtResource("14_8egab")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Memorice"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 45.0
+offset_right = 23.0
+offset_bottom = 60.0
+
+[node name="LabelNombre" type="Label" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Memorice/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.46666667, 0.36862746, 0.2, 1)
+theme_override_fonts/font = ExtResource("8_j7ex8")
+theme_override_font_sizes/font_size = 6
+text = "Pares Ocultos"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MemoriceButton" type="Button" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Memorice"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 9.0
+offset_right = 31.0
+offset_bottom = 60.0
+size_flags_horizontal = 10
+theme_override_constants/h_separation = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ajci")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5pajh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a8gd2")
+autowrap_mode = 2
+
+[node name="Card_Counting" type="Panel" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main"]
+custom_minimum_size = Vector2(40, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gw5y6")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Counting"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = -17.0
+offset_right = 139.0
+offset_bottom = 88.0
+scale = Vector2(0.535, 0.535)
+texture = ExtResource("15_gw5y6")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Counting"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 47.0
+offset_right = 48.0
+offset_bottom = 62.0
+
+[node name="LabelNombre" type="Label" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Counting/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.46666667, 0.36862746, 0.2, 1)
+theme_override_fonts/font = ExtResource("8_j7ex8")
+theme_override_font_sizes/font_size = 6
+text = "Conteo Marino"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CountingButton" type="Button" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Counting"]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 47.0
+offset_bottom = 65.0
+size_flags_horizontal = 10
+theme_override_constants/h_separation = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ajci")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5pajh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a8gd2")
+autowrap_mode = 2
+
+[node name="Card_Color" type="Panel" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main"]
+custom_minimum_size = Vector2(40, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gw5y6")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Color"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 12.000006
+offset_top = 20.999992
+offset_right = 158.26865
+offset_bottom = 86.67162
+scale = Vector2(0.335, 0.335)
+texture = ExtResource("17_gw5y6")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Color"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 47.0
+offset_right = 61.0
+offset_bottom = 53.0
+
+[node name="LabelNombre" type="Label" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Color/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.46666667, 0.36862746, 0.2, 1)
+theme_override_fonts/font = ExtResource("8_j7ex8")
+theme_override_font_sizes/font_size = 6
+text = "Nyuron Canta"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ColorButton" type="Button" parent="CanvasLayer/MenuSlidePanel/TarjetaGeneral/HBox_Main/Card_Color"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 18.0
+offset_right = 65.0
+offset_bottom = 54.0
+size_flags_horizontal = 10
+theme_override_constants/h_separation = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ajci")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5pajh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a8gd2")
+autowrap_mode = 2
+
+[node name="PanelProgreso" type="Control" parent="CanvasLayer"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("9_flqon")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/PanelProgreso"]
+position = Vector2(135, 273)
+scale = Vector2(0.99523807, 0.9076923)
+texture = ExtResource("9_lgwnu")
+
+[node name="LabelJugador" type="Label" parent="CanvasLayer/PanelProgreso"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -167.0
+offset_right = 24.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.34117648, 0.21568628, 0, 0.5372549)
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="LabelProgreso" type="Label" parent="CanvasLayer/PanelProgreso"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -17.0
+offset_top = 135.0
+offset_right = 23.0
+offset_bottom = 158.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.37438738, 0.29284385, 0.15224305, 1)
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelProgreso"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 47.0
+offset_top = 168.0
+offset_right = -43.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hstxw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8egab")
+vertical_scroll_mode = 3
+
+[node name="VBoxContainerLogros" type="VBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Card_TurtleRun" type="Panel" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_rcqid")
+
+[node name="HBox_Main" type="HBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_TurtleRun"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 179.0
+offset_bottom = 56.0
+theme_override_constants/separation = 15
+
+[node name="VBox_Info" type="VBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_TurtleRun/HBox_Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxHeader" type="HBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_TurtleRun/HBox_Main/VBox_Info"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="LabelNombre" type="Label" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_TurtleRun/HBox_Main/VBox_Info/HBoxHeader"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.46666667, 0.36862746, 0.2, 1)
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 7
+
+[node name="TurtleButton" type="Button" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_TurtleRun/HBox_Main/VBox_Info/HBoxHeader"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/h_separation = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ajci")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5pajh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a8gd2")
+icon = ExtResource("11_1ajci")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_TurtleRun/HBox_Main/VBox_Info"]
+custom_minimum_size = Vector2(140, 15)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 8
+show_percentage = false
+
+[node name="ProgressLabel" type="Label" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_TurtleRun/HBox_Main/VBox_Info/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -7.5
+offset_right = 35.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_TurtleRun/HBox_Main"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = -16
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRectLogro" type="TextureRect" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_TurtleRun/HBox_Main/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Card_WormBucket" type="Panel" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_rcqid")
+
+[node name="HBox_Main" type="HBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_WormBucket"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 179.0
+offset_bottom = 56.0
+theme_override_constants/separation = 15
+
+[node name="VBox_Info" type="VBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_WormBucket/HBox_Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxHeader" type="HBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_WormBucket/HBox_Main/VBox_Info"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="LabelNombre" type="Label" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_WormBucket/HBox_Main/VBox_Info/HBoxHeader"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.46666667, 0.36862746, 0.2, 1)
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 7
+
+[node name="WormButton" type="Button" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_WormBucket/HBox_Main/VBox_Info/HBoxHeader"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/h_separation = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ajci")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5pajh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a8gd2")
+icon = ExtResource("11_1ajci")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_WormBucket/HBox_Main/VBox_Info"]
+custom_minimum_size = Vector2(140, 15)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 8
+show_percentage = false
+
+[node name="ProgressLabel" type="Label" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_WormBucket/HBox_Main/VBox_Info/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -7.5
+offset_right = 35.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_WormBucket/HBox_Main"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = -16
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRectLogro" type="TextureRect" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_WormBucket/HBox_Main/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Card_FoodCatch" type="Panel" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_rcqid")
+
+[node name="HBox_Main" type="HBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_FoodCatch"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 179.0
+offset_bottom = 56.0
+theme_override_constants/separation = 15
+
+[node name="VBox_Info" type="VBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_FoodCatch/HBox_Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxHeader" type="HBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_FoodCatch/HBox_Main/VBox_Info"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="LabelNombre" type="Label" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_FoodCatch/HBox_Main/VBox_Info/HBoxHeader"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.46666667, 0.36862746, 0.2, 1)
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 7
+
+[node name="FoodButton" type="Button" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_FoodCatch/HBox_Main/VBox_Info/HBoxHeader"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/h_separation = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ajci")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5pajh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a8gd2")
+icon = ExtResource("11_1ajci")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_FoodCatch/HBox_Main/VBox_Info"]
+custom_minimum_size = Vector2(140, 15)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 8
+show_percentage = false
+
+[node name="ProgressLabel" type="Label" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_FoodCatch/HBox_Main/VBox_Info/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -7.5
+offset_right = 35.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_FoodCatch/HBox_Main"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = -16
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRectLogro" type="TextureRect" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_FoodCatch/HBox_Main/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Card_Memorice" type="Panel" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_rcqid")
+
+[node name="HBox_Main" type="HBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_Memorice"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 179.0
+offset_bottom = 56.0
+theme_override_constants/separation = 15
+
+[node name="VBox_Info" type="VBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_Memorice/HBox_Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxHeader" type="HBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_Memorice/HBox_Main/VBox_Info"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="LabelNombre" type="Label" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_Memorice/HBox_Main/VBox_Info/HBoxHeader"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.46666667, 0.36862746, 0.2, 1)
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 7
+
+[node name="MemoriceButton" type="Button" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_Memorice/HBox_Main/VBox_Info/HBoxHeader"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/h_separation = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ajci")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5pajh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a8gd2")
+icon = ExtResource("11_1ajci")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_Memorice/HBox_Main/VBox_Info"]
+custom_minimum_size = Vector2(140, 15)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 8
+show_percentage = false
+
+[node name="ProgressLabel" type="Label" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_Memorice/HBox_Main/VBox_Info/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -7.5
+offset_right = 35.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_Memorice/HBox_Main"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = -16
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRectLogro" type="TextureRect" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_Memorice/HBox_Main/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Card_CountingAnimals" type="Panel" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_rcqid")
+
+[node name="HBox_Main" type="HBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_CountingAnimals"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 179.0
+offset_bottom = 56.0
+theme_override_constants/separation = 15
+
+[node name="VBox_Info" type="VBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_CountingAnimals/HBox_Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxHeader" type="HBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_CountingAnimals/HBox_Main/VBox_Info"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="LabelNombre" type="Label" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_CountingAnimals/HBox_Main/VBox_Info/HBoxHeader"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.46666667, 0.36862746, 0.2, 1)
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 7
+
+[node name="CountingButton" type="Button" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_CountingAnimals/HBox_Main/VBox_Info/HBoxHeader"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/h_separation = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ajci")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5pajh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a8gd2")
+icon = ExtResource("11_1ajci")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_CountingAnimals/HBox_Main/VBox_Info"]
+custom_minimum_size = Vector2(140, 15)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 8
+show_percentage = false
+
+[node name="ProgressLabel" type="Label" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_CountingAnimals/HBox_Main/VBox_Info/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -7.5
+offset_right = 35.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_CountingAnimals/HBox_Main"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = -16
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRectLogro" type="TextureRect" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_CountingAnimals/HBox_Main/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Card_NyuronColor" type="Panel" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_rcqid")
+
+[node name="HBox_Main" type="HBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_NyuronColor"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 179.0
+offset_bottom = 56.0
+theme_override_constants/separation = 15
+
+[node name="VBox_Info" type="VBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_NyuronColor/HBox_Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxHeader" type="HBoxContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_NyuronColor/HBox_Main/VBox_Info"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="LabelNombre" type="Label" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_NyuronColor/HBox_Main/VBox_Info/HBoxHeader"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.46666667, 0.36862746, 0.2, 1)
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 7
+
+[node name="ColorButton" type="Button" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_NyuronColor/HBox_Main/VBox_Info/HBoxHeader"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/h_separation = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ajci")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7b55j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5pajh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j7ex8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a8gd2")
+icon = ExtResource("11_1ajci")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_NyuronColor/HBox_Main/VBox_Info"]
+custom_minimum_size = Vector2(140, 15)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 8
+show_percentage = false
+
+[node name="ProgressLabel" type="Label" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_NyuronColor/HBox_Main/VBox_Info/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -7.5
+offset_right = 35.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_NyuronColor/HBox_Main"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = -16
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 2
+
+[node name="TextureRectLogro" type="TextureRect" parent="CanvasLayer/PanelProgreso/VBoxContainer/ScrollContainer/VBoxContainerLogros/Card_NyuronColor/HBox_Main/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CoinDisplay" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = 14.0
+offset_right = -38.0
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1dfpl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CoinDisplay"]
+custom_minimum_size = Vector2(-1.575, -1.81)
+layout_mode = 2
+alignment = 1
+
+[node name="CoinIcon" type="TextureRect" parent="CanvasLayer/CoinDisplay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("20_svtp6")
+expand_mode = 3
+
+[node name="CoinLabel" type="Label" parent="CanvasLayer/CoinDisplay/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_5dd4i")
+text = "9999"
+horizontal_alignment = 1
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="gaviotaquieta" type="AnimatedSprite2D" parent="."]
+z_index = 16
+position = Vector2(37, 270)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_qywvv")
+autoplay = "default"
+
+[node name="NyuronVisual" type="AnimatedSprite2D" parent="."]
+z_index = 16
+texture_filter = 1
+position = Vector2(137, 323)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1a85y")
+autoplay = "default"
+frame_progress = 0.94887966
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_1dfpl")
+volume_db = -22.969
+autoplay = true

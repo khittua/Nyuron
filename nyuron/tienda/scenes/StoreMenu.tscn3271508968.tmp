@@ -1,0 +1,784 @@
+[gd_scene load_steps=74 format=3 uid="uid://pb141mhw741k"]
+
+[ext_resource type="Script" uid="uid://cesoq328eqd0y" path="res://scenes/store_menu.gd" id="1_13ln6"]
+[ext_resource type="Script" uid="uid://b7shhucnnroh7" path="res://animated_sprite_2d.gd" id="2_13ln6"]
+[ext_resource type="Texture2D" uid="uid://bc2558md5hv23" path="res://Images/Barco_Fondo.png" id="2_qb3id"]
+[ext_resource type="FontFile" uid="uid://by1lj41q531tm" path="res://Aquarius-Bold.ttf" id="3_wjgm0"]
+[ext_resource type="Texture2D" uid="uid://b5mf58bgik7eq" path="res://icons/Coins.png" id="5_j8biv"]
+[ext_resource type="Texture2D" uid="uid://or568g6wl6yg" path="res://icons/volver1.png" id="6_nthrf"]
+[ext_resource type="Texture2D" uid="uid://csxwkknwwessi" path="res://icons/volver2.png" id="7_17usp"]
+[ext_resource type="Texture2D" uid="uid://b0t3b54mp5g87" path="res://icons/Corona.png" id="7_4073d"]
+[ext_resource type="Texture2D" uid="uid://bktmb3q0it3xs" path="res://Images/btn_comprar.png" id="9_12wbp"]
+[ext_resource type="Texture2D" uid="uid://db24wh5irw3uj" path="res://icons/Lentes.png" id="9_166qx"]
+[ext_resource type="Texture2D" uid="uid://w1l1352pddce" path="res://icons/Gorro.png" id="9_watox"]
+[ext_resource type="Texture2D" uid="uid://dc4x58sxwt2qn" path="res://Images/btb_comprar_prssd.png" id="10_166qx"]
+[ext_resource type="AudioStream" uid="uid://0sl4q1bhdhqc" path="res://sonidos/Boton.mp3" id="12_watox"]
+[ext_resource type="Texture2D" uid="uid://bfmuk2ixdxqqw" path="res://icons/Cadena.png" id="13_3d2dn"]
+[ext_resource type="AudioStream" uid="uid://c2fym4h5ypaii" path="res://sonidos/Incorrect.mp3" id="13_g2qjs"]
+[ext_resource type="Texture2D" uid="uid://cjhqroiy8ss26" path="res://Images/Skin_Green.png" id="14_l3vll"]
+[ext_resource type="AudioStream" uid="uid://cuhxrh2cm67tc" path="res://sonidos/Fondo.mp3" id="15_qb3id"]
+[ext_resource type="Texture2D" uid="uid://bh1w1rq7evgdg" path="res://Images/Skin_Purple.png" id="15_ybsg7"]
+[ext_resource type="Texture2D" uid="uid://ya6ylm4gvkjv" path="res://Images/Skin_Gray.png" id="16_en1q1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d2dn"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(0, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysm4u"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(270, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cchyh"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(540, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3vll"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(810, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybsg7"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(1080, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en1q1"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(1350, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w3wy"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(1620, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jnr7"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(1890, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvs5o"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(2160, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vjb7"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(2430, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2njmk"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(2700, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5264"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(2970, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5rce"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(3240, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2hen"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(3510, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkjeb"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(3780, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbc8w"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(4050, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gh3i"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(4320, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46bai"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(4590, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv7r3"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(4860, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u07ke"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(5130, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxwsx"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(5400, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm3qf"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(5670, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ardg"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(5940, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aflb5"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(6210, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mru7s"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(6480, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b6l2"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(6750, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_371cv"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(7020, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_056vb"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(7290, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4cp6"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(7560, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyys0"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(7830, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyelf"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(8100, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cojw7"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(8370, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr6ci"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(8640, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbfi1"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(8910, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7id71"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(9180, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ro8x"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(9450, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0kjt"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(9720, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggdfs"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(9990, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6vkl"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(10260, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmcrd"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(10530, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vees"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(10800, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecqeu"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(11070, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1ka1"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(11340, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_or1id"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(11610, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7wwe"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(11880, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsm8w"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(12150, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxoj7"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(12420, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pege"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(12690, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_560hc"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(12960, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34h3f"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(13230, 0, 270, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjkrb"]
+atlas = ExtResource("2_qb3id")
+region = Rect2(13500, 0, 270, 480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qb3id"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d2dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysm4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cchyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3vll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybsg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en1q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5w3wy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jnr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvs5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vjb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2njmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5264")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5rce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2hen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkjeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbc8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gh3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46bai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv7r3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u07ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxwsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm3qf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ardg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aflb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mru7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b6l2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_371cv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_056vb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4cp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyys0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyelf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cojw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr6ci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbfi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7id71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ro8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0kjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggdfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6vkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmcrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vees")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecqeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1ka1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_or1id")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7wwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsm8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxoj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pege")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_560hc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34h3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjkrb")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="Theme" id="Theme_g2qjs"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5w3wy"]
+load_path = "res://.godot/imported/Skin_Blue.png-c3e0dc46c448224a41a69988305c7d57.ctex"
+
+[node name="StoreMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_13ln6")
+
+[node name="Fondo" type="AnimatedSprite2D" parent="."]
+position = Vector2(135, 240)
+sprite_frames = SubResource("SpriteFrames_qb3id")
+animation = &"new_animation"
+frame_progress = 0.76875466
+script = ExtResource("2_13ln6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.0
+offset_top = 65.0
+offset_right = 136.0
+offset_bottom = 142.0
+grow_horizontal = 2
+theme = SubResource("Theme_g2qjs")
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Titulo" type="Label" parent="CanvasLayer/UI/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 0.47058824, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 12
+text = "Bienvenido a la Tienda!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Monedas" type="Label" parent="CanvasLayer/UI/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 12
+text = "Monedas: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/UI/VBoxContainer"]
+position = Vector2(210.50003, 54.5)
+scale = Vector2(0.4375, 0.46969697)
+texture = ExtResource("5_j8biv")
+
+[node name="HBoxContainer" type="BoxContainer" parent="CanvasLayer"]
+offset_left = -1.0
+offset_top = 450.0
+offset_right = 271.0
+offset_bottom = 479.0
+alignment = 1
+
+[node name="TextureRect" type="TextureButton" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_nthrf")
+texture_pressed = ExtResource("7_17usp")
+
+[node name="InfoPanel" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 0, 1)
+top_level = true
+z_index = 100
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/InfoPanel"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 143.0
+offset_right = 225.0
+offset_bottom = 332.0
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/InfoPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+stretch_mode = 3
+
+[node name="Nombre" type="Label" parent="CanvasLayer/InfoPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Precio" type="Label" parent="CanvasLayer/InfoPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/InfoPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="BtnComprar" type="TextureButton" parent="CanvasLayer/InfoPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_12wbp")
+texture_pressed = ExtResource("10_166qx")
+stretch_mode = 5
+
+[node name="BtnCerrar" type="TextureButton" parent="CanvasLayer/InfoPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_nthrf")
+texture_pressed = ExtResource("7_17usp")
+stretch_mode = 5
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = 0.73
+anchor_right = 0.55
+anchor_bottom = 0.75
+offset_left = -118.5
+offset_top = -94.0
+offset_right = 118.5
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 55
+theme_override_constants/v_separation = 21
+columns = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/GridContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_4073d")
+stretch_mode = 5
+
+[node name="LabelName" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.50980395, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "Corona"
+
+[node name="LabelPrecio" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "25 Monedas"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/GridContainer/VBoxContainer2"]
+show_behind_parent = true
+layout_mode = 2
+texture_normal = ExtResource("9_166qx")
+stretch_mode = 5
+
+[node name="LabelName2" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.5254902, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "Lentes de sol"
+
+[node name="LabelPrecio2" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "15 Monedas"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TextureButton3" type="TextureButton" parent="CanvasLayer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("9_watox")
+stretch_mode = 5
+
+[node name="LabelName3" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "Gorro"
+
+[node name="LabelPrecio3" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "20 Monedas"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="TextureButton4" type="TextureButton" parent="CanvasLayer/GridContainer/VBoxContainer4"]
+layout_mode = 2
+texture_normal = ExtResource("13_3d2dn")
+stretch_mode = 5
+
+[node name="LabelName4" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.28235295, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "Cadena"
+
+[node name="LabelPrecio4" type="Label" parent="CanvasLayer/GridContainer/VBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "50 Monedas"
+
+[node name="VBoxShell1" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/GridContainer/VBoxShell1"]
+layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_5w3wy")
+stretch_mode = 5
+
+[node name="LabelName" type="Label" parent="CanvasLayer/GridContainer/VBoxShell1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.50980395, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "Caparazon Azul"
+
+[node name="LabelPrecio" type="Label" parent="CanvasLayer/GridContainer/VBoxShell1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "25 Monedas"
+
+[node name="VBoxShell2" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/GridContainer/VBoxShell2"]
+layout_mode = 2
+texture_normal = ExtResource("14_l3vll")
+stretch_mode = 5
+
+[node name="LabelName" type="Label" parent="CanvasLayer/GridContainer/VBoxShell2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.50980395, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "Corona"
+
+[node name="LabelPrecio" type="Label" parent="CanvasLayer/GridContainer/VBoxShell2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "25 Monedas"
+
+[node name="VBoxShell3" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/GridContainer/VBoxShell3"]
+layout_mode = 2
+texture_normal = ExtResource("15_ybsg7")
+stretch_mode = 5
+
+[node name="LabelName" type="Label" parent="CanvasLayer/GridContainer/VBoxShell3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.50980395, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "Corona"
+
+[node name="LabelPrecio" type="Label" parent="CanvasLayer/GridContainer/VBoxShell3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "25 Monedas"
+
+[node name="VBoxShell4" type="VBoxContainer" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/GridContainer/VBoxShell4"]
+layout_mode = 2
+texture_normal = ExtResource("16_en1q1")
+stretch_mode = 5
+
+[node name="LabelName" type="Label" parent="CanvasLayer/GridContainer/VBoxShell4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.50980395, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "Corona"
+
+[node name="LabelPrecio" type="Label" parent="CanvasLayer/GridContainer/VBoxShell4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_wjgm0")
+theme_override_font_sizes/font_size = 10
+text = "25 Monedas"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BtnAccesorios" type="TextureButton" parent="CanvasLayer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("6_nthrf")
+texture_pressed = ExtResource("7_17usp")
+
+[node name="BtnCaparazones" type="TextureButton" parent="CanvasLayer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("9_12wbp")
+texture_pressed = ExtResource("10_166qx")
+
+[node name="SFX_Boton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_watox")
+
+[node name="SFX_Incorrect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_g2qjs")
+
+[node name="SFX_Fondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_qb3id")

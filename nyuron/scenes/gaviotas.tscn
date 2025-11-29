@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://cthqi1b5kfiad"]
+
+[ext_resource type="Script" uid="uid://cvplqgf16rb8g" path="res://scripts/gaviota.gd" id="1_1djhj"]
+[ext_resource type="Texture2D" uid="uid://dbe1te3i8goh1" path="res://assets/gaviota2.png" id="1_cw7ef"]
+[ext_resource type="Texture2D" uid="uid://drn6xe6ctdnra" path="res://assets/gaviota.png" id="1_kp4oy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw7ef"]
+atlas = ExtResource("1_cw7ef")
+region = Rect2(0, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5iek8"]
+atlas = ExtResource("1_cw7ef")
+region = Rect2(60, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66egh"]
+atlas = ExtResource("1_kp4oy")
+region = Rect2(0, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx2wv"]
+atlas = ExtResource("1_kp4oy")
+region = Rect2(60, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddmgb"]
+atlas = ExtResource("1_kp4oy")
+region = Rect2(120, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeeye"]
+atlas = ExtResource("1_kp4oy")
+region = Rect2(180, 0, 60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x2ri7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw7ef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5iek8")
+}],
+"loop": true,
+"name": &"picado",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66egh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx2wv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddmgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aeeye")
+}],
+"loop": true,
+"name": &"volar",
+"speed": 5.0
+}]
+
+[node name="Gaviota" type="Node2D"]
+z_index = 12
+script = ExtResource("1_1djhj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x2ri7")
+animation = &"picado"
+frame_progress = 0.7671219

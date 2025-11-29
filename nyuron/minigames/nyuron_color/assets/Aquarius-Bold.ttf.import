@@ -1,0 +1,41 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://dyro1fb0aglls"
+path="res://.godot/imported/Aquarius-Bold.ttf-735d8659961b7745c96b2c508d115139.fontdata"
+
+[deps]
+
+source_file="res://minigames/nyuron_color/assets/Aquarius-Bold.ttf"
+dest_files=["res://.godot/imported/Aquarius-Bold.ttf-735d8659961b7745c96b2c508d115139.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=0
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+modulate_color_glyphs=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "Nueva Configuración",
+"size": Vector2i(16, 0)
+}]
+language_support={}
+script_support={}
+opentype_features={}

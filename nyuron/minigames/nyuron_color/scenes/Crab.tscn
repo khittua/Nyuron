@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs3y4up8iw8s3"]
+
+[ext_resource type="Script" uid="uid://dfaiwwq1lugg8" path="res://minigames/nyuron_color/scripts/Crab.gd" id="1_47adp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47adp"]
+size = Vector2(78.25, 73.75)
+
+[node name="Crab" type="Area2D"]
+script = ExtResource("1_47adp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_47adp")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
